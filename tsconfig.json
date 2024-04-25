@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["/*"],
+            "@components/*": ["components/*"],
+            "@styles/*": ["styles/*"]
+        },
+        "jsx": "react",
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "strictFunctionTypes": true,
+        "noImplicitThis": true,
+        "strictBindCallApply": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["src", "./src/declaration.d.ts"]
+}
