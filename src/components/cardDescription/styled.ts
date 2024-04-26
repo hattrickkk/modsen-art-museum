@@ -5,11 +5,11 @@ export const StyledDescription = styled.div`
     background-color: ${palette.WHITE_COLOR};
 `
 
-export const StyledIcon = styled.div`
+export const StyledIcon = styled.div<{ $faved: boolean }>`
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    background-color: ${palette.GRAY_COLOR};
+    background-color: ${props => (props.$faved ? palette.LIGHT_ORANGE_COLOR : palette.GRAY_COLOR)};
     display: flex;
     align-items: center;
     justify-content: center;

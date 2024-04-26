@@ -1,9 +1,11 @@
 import { Action, combineReducers, configureStore } from '@reduxjs/toolkit'
 import thunkMiddleware, { ThunkAction, thunk } from 'redux-thunk'
 import { picsReducer } from './pics/reducer'
+import { favReducer } from './favorites/reducer'
 
 const rootReducer = combineReducers({
-    pics: picsReducer
+    pics: picsReducer,
+    favs: favReducer,
 })
 
 const store = configureStore({
