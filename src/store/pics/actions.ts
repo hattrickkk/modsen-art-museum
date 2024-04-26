@@ -12,7 +12,7 @@ export const setPiscAction = (response: ResponseType): PicsActionType => {
 
 export const loadPics = (): AppThunk => {
     return async dispatch => {
-        const response = await getPisc()
+        const response = await getPisc(3)
         dispatch(setPiscAction(response))
     }
 }

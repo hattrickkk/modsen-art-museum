@@ -23,7 +23,7 @@ const Card = ({ item }: CardProps) => {
                     <img src={imageURL ? imageURL : defaultImage} alt='' />
                 </StyledImageContainer>
                 <StyledDescriptionWrapper>
-                    <CardDescription />
+                    <CardDescription item={item}/>
                 </StyledDescriptionWrapper>
             </Flex>
         </StyledCard>
