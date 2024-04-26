@@ -18,7 +18,7 @@ const CardDescription = ({ small }: PropsType) => {
     return (
         <StyledDescription>
             <Flex $alignitems='center'>
-                <StyledTextContainer $small>
+                <StyledTextContainer $small={small ? small : false}>
                     <StyledTitle>Charles V, bust length dcas shdi sajs d sdsfdjdsj aso cas</StyledTitle>
                     <StyledParagraph>Giovanni Britto</StyledParagraph>
                     <StyledAvailabilityInfo>Public</StyledAvailabilityInfo>

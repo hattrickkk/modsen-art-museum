@@ -26,7 +26,7 @@ export const StyledIcon = styled.div`
     }
 `
 //
-export const StyledTextContainer = styled.div<{$small?:boolean}>`
+export const StyledTextContainer = styled.div<{ $small?: boolean }>`
     max-width: 220px;
     overflow: hidden;
     line-height: 26px;
@@ -34,6 +34,7 @@ export const StyledTextContainer = styled.div<{$small?:boolean}>`
 
     font-size: 15px;
     letter-spacing: -0.01em;
+    font-family: ${props => (props.$small === true ? 'Inter' : '')};
 
     & > * {
         text-overflow: ellipsis;
@@ -44,7 +45,7 @@ export const StyledTextContainer = styled.div<{$small?:boolean}>`
     }
 
     @media screen and (max-width: 1280px) {
-        max-width: ${props => props.$small ? 'calc(100% - 60px)' : '' };
+        max-width: ${props => (props.$small ? 'calc(100% - 60px)' : '')};
     }
 
     @media screen and (max-width: 1210px) {
@@ -61,7 +62,7 @@ export const StyledTitle = styled.h4`
     font-size: 17px;
     letter-spacing: -0.03em;
 
-    @media screen and (max-width: 1210px){
+    @media screen and (max-width: 1210px) {
         font-size: 20px;
     }
 `
@@ -71,7 +72,7 @@ export const StyledParagraph = styled.p`
 export const StyledAvailabilityInfo = styled.p`
     margin: 8px 0 0 0;
     font-weight: 700;
-    @media screen and (max-width: 1210px){
+    @media screen and (max-width: 1210px) {
         margin: 18px 0 0 0;
     }
 `
