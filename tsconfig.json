@@ -4,7 +4,9 @@
         "paths": {
             "@/*": ["/*"],
             "@components/*": ["components/*"],
-            "@styles/*": ["styles/*"]
+            "@styles/*": ["styles/*"],
+            "@constants/*": ["constants/*"],
+            "@ui/*": ["ui/*"]
         },
         "jsx": "react",
         "alwaysStrict": true,

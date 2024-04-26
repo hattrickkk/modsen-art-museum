@@ -1,0 +1,5 @@
+export const BLACK_COLOR: string = '#393939'
+export const GRAY_COLOR: string = '#f0f1f1'
+export const WHITE_COLOR: string = '#ffffff'
+export const ORANGE_COLOR: string = '#e0a449'
+export const LIGHT_ORANGE_COLOR: string = '#fbd7b2'
