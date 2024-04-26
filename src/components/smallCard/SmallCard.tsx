@@ -1,22 +1,24 @@
 import CardDescription from '@components/cardDescription/CardDescription'
 import React from 'react'
 import image from '../../assets/image 1.png'
-import { Flex, FlexItem } from '@styles/flexStyles'
-import { StyledImageWrapper, StyledSmallCard } from './styled'
+import { Flex } from '@styles/flexStyles'
+import { StyledCardDescriptionWrapper, StyledImageWrapper, StyledSmallCard, StyledSmallCardWrapper } from './styled'
 
 const SmallCard = () => {
     return (
-        <FlexItem $gap={15} $percent={33}>
+        <StyledSmallCardWrapper>
             <StyledSmallCard>
                 <Flex>
                     <StyledImageWrapper>
                         <img src={image} alt='' />
                     </StyledImageWrapper>
 
-                    <CardDescription />
+                    <StyledCardDescriptionWrapper>
+                        <CardDescription small />
+                    </StyledCardDescriptionWrapper>
                 </Flex>
             </StyledSmallCard>
-        </FlexItem>
+        </StyledSmallCardWrapper>
     )
 }
 

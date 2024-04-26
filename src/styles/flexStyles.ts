@@ -19,10 +19,12 @@ export const Flex = styled.div<FlexPropsType>`
 
 export const FlexContainer = styled(Flex)`
     margin: 0 -${props => props.$gap || '15'}px;
-    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 780px) {
+        margin: 0;
+    }
 `
 
-export const FlexItem = styled.div<{ $gap: number; $percent: number }>`
-    padding: 0 ${props => props.$gap}px;
-    flex: 0 1 ${props => props.$percent}%;
-`

@@ -10,20 +10,22 @@ import {
 import { Flex } from '@styles/flexStyles'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 
-const CardDescription = () => {
+type PropsType = {
+    small?: boolean
+}
+
+const CardDescription = ({ small }: PropsType) => {
     return (
         <StyledDescription>
-            <Flex>
-                <Flex $justifycontent='center' $alignitems='center'>
-                    <StyledTextContainer>
-                        <StyledTitle>Charles V, bust length dcascas</StyledTitle>
-                        <StyledParagraph>Giovanni Britto</StyledParagraph>
-                        <StyledAvailabilityInfo>Public</StyledAvailabilityInfo>
-                    </StyledTextContainer>
-                    <StyledIcon>
-                        <SaveIcon />
-                    </StyledIcon>
-                </Flex>
+            <Flex $alignitems='center'>
+                <StyledTextContainer $small>
+                    <StyledTitle>Charles V, bust length dcas shdi sajs d sdsfdjdsj aso cas</StyledTitle>
+                    <StyledParagraph>Giovanni Britto</StyledParagraph>
+                    <StyledAvailabilityInfo>Public</StyledAvailabilityInfo>
+                </StyledTextContainer>
+                <StyledIcon>
+                    <SaveIcon />
+                </StyledIcon>
             </Flex>
         </StyledDescription>
     )
