@@ -20,14 +20,14 @@ export const StyledIcon = styled.div`
         filter: brightness(90%);
     }
 
-    @media screen and (max-width: 1210px) {
+    @media screen and (max-width: 1212px) {
         width: 70px;
         height: 70px;
     }
 `
 //
 export const StyledTextContainer = styled.div<{ $small?: boolean }>`
-    max-width: 220px;
+    max-width: 210px;
     overflow: hidden;
     line-height: 26px;
     padding: 0 8px 0 0;
@@ -48,7 +48,7 @@ export const StyledTextContainer = styled.div<{ $small?: boolean }>`
         max-width: ${props => (props.$small ? 'calc(100% - 60px)' : '')};
     }
 
-    @media screen and (max-width: 1210px) {
+    @media screen and (max-width: 1212px) {
         max-width: calc(100% - 90px);
 
         & > * {
@@ -62,7 +62,7 @@ export const StyledTitle = styled.h4`
     font-size: 17px;
     letter-spacing: -0.03em;
 
-    @media screen and (max-width: 1210px) {
+    @media screen and (max-width: 1212px) {
         font-size: 20px;
     }
 `
@@ -72,7 +72,7 @@ export const StyledParagraph = styled.p`
 export const StyledAvailabilityInfo = styled.p`
     margin: 8px 0 0 0;
     font-weight: 700;
-    @media screen and (max-width: 1210px) {
+    @media screen and (max-width: 1212px) {
         margin: 18px 0 0 0;
     }
 `

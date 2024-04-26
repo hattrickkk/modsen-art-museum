@@ -9,7 +9,7 @@ export const StyledSmallCardWrapper = styled.div`
     flex: 0 1 33%;
     padding: 0 15px;
 
-    @media screen and (max-width: 1210px) and (min-width: 780px) {
+    @media screen and (max-width: 1212px) and (min-width: 780px) {
         flex: 0 1 50%;
 
         &:last-child:nth-child(odd) {
@@ -43,7 +43,7 @@ export const StyledImageWrapper = styled.div`
         object-position: center;
     }
 
-    @media screen and (max-width: 1210px) {
+    @media screen and (max-width: 1212px) {
         width: 135px;
         padding: 0 17px 0 0;
     }
