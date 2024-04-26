@@ -8,7 +8,9 @@
             "@constants/*": ["constants/*"],
             "@ui/*": ["ui/*"],
             "@utils/*": ["utils/*"],
-            "@models/*": ["models/*"]
+            "@models/*": ["models/*"],
+            "@store/*": ["store/*"],
+            "@assets/*": ["assets/*"]
         },
         "jsx": "react",
         "alwaysStrict": true,

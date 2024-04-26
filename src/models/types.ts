@@ -9,7 +9,9 @@ export type ResponsePicType = {
 export type PicType = {
     id: number
     title: string
-    image: string
+    image: string | null
+    author: string | null
+    isPublic: boolean
 }
 
 export type PaginationType = {

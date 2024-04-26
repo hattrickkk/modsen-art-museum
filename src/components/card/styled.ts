@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
 
-
 export const StyledCard = styled.div`
     flex: 0 1 33%;
     padding: 0 15px;
@@ -41,10 +40,12 @@ export const StyledDescriptionWrapper = styled.div`
     }
 `
 
-export const StyledImageContainer = styled.div`
+export const StyledImageContainer = styled.div<{ $outline: boolean }>`
     width: 100%;
     overflow: hidden;
     height: 480px;
+
+    border: ${props => (props.$outline ? `4px solid ${palette.ORANGE_COLOR}` : '')};
 
     img {
         width: 100%;

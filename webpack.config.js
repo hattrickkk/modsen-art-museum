@@ -51,6 +51,8 @@ module.exports = {
             '@ui': path.resolve(__dirname, 'src/ui'),
             '@utils': path.resolve(__dirname, 'src/utils'),
             '@models': path.resolve(__dirname, 'src/models'),
+            '@store': path.resolve(__dirname, 'src/store'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
         },
     },
 }
