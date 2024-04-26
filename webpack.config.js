@@ -49,6 +49,8 @@ module.exports = {
             '@styles': path.resolve(__dirname, 'src/styles'),
             '@constants': path.resolve(__dirname, 'src/constants'),
             '@ui': path.resolve(__dirname, 'src/ui'),
+            '@utils': path.resolve(__dirname, 'src/utils'),
+            '@models': path.resolve(__dirname, 'src/models'),
         },
     },
 }

@@ -6,7 +6,9 @@
             "@components/*": ["components/*"],
             "@styles/*": ["styles/*"],
             "@constants/*": ["constants/*"],
-            "@ui/*": ["ui/*"]
+            "@ui/*": ["ui/*"],
+            "@utils/*": ["utils/*"],
+            "@models/*": ["models/*"]
         },
         "jsx": "react",
         "alwaysStrict": true,
