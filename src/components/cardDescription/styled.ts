@@ -33,7 +33,7 @@ export const StyledTextContainer = styled.div<{ $small?: boolean }>`
     max-width: 210px;
     overflow: hidden;
     line-height: 26px;
-    padding: 0 8px 0 0;
+    padding: 0 10px 0 0;
 
     font-size: 15px;
     letter-spacing: -0.01em;
@@ -51,9 +51,11 @@ export const StyledTextContainer = styled.div<{ $small?: boolean }>`
         max-width: ${props => (props.$small ? 'calc(100% - 60px)' : '')};
     }
 
-    @media screen and (max-width: 1212px) {
+    @media screen and (max-width: 1216px) {
         max-width: calc(100% - 90px);
+    }
 
+    @media screen and (max-width: 1212px) {
         & > * {
             font-size: 20px;
             line-height: 35px;
@@ -75,6 +77,7 @@ export const StyledParagraph = styled.p`
 export const StyledAvailabilityInfo = styled.p`
     margin: 8px 0 0 0;
     font-weight: 700;
+    line-height: normal;
     @media screen and (max-width: 1212px) {
         margin: 16px 0 0 0;
     }

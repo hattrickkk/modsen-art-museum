@@ -11,7 +11,7 @@ type PropsType = {
 
 const CardsContainer = ({ list, big }: PropsType) => {
     return (
-        <FlexContainer $gap={15}>
+        <FlexContainer $gap={big ? 15 : 8}>
             {list.map(el => (big ? <Card key={el.id} item={el} /> : <SmallCard key={el.id} item={el} />))}
         </FlexContainer>
     )

@@ -29,13 +29,13 @@ export const StyledDescriptionWrapper = styled.div`
     transform: translate(25px, -50%);
 
     & > div {
-        padding: 32px 24px;
-        border: 1px solid ${palette.GRAY_COLOR};
+        padding: 20px 24px;
+        border: 2px solid ${palette.GRAY_COLOR};
     }
 
-    @media screen and (max-width: 1240px) {
+    @media screen and (max-width: 500px) {
         & > div {
-            padding: 25px 19px;
+            padding: 20px;
         }
     }
 `
@@ -43,7 +43,7 @@ export const StyledDescriptionWrapper = styled.div`
 export const StyledImageContainer = styled.div<{ $outline: boolean }>`
     width: 100%;
     overflow: hidden;
-    height: 480px;
+    height: 470px;
 
     border: ${props => (props.$outline ? `4px solid ${palette.ORANGE_COLOR}` : '')};
 

@@ -8,7 +8,7 @@ export const StyledCardDescriptionWrapper = styled.div`
 
 export const StyledSmallCardWrapper = styled.div`
     flex: 0 1 33%;
-    padding: 0 15px;
+    padding: 0 8px;
 
     @media screen and (max-width: 1212px) and (min-width: 780px) {
         flex: 0 1 50%;
@@ -26,15 +26,16 @@ export const StyledSmallCardWrapper = styled.div`
 `
 
 export const StyledSmallCard = styled.div`
-    border: 1px solid ${palette.GRAY_COLOR};
+    border: 2px solid ${palette.GRAY_COLOR};
     padding: 16px;
-    margin: 0 0 25px 0;
+    margin: 0 0 16px 0;
+    background-color: ${palette.WHITE_COLOR};
 `
 
 export const StyledImageWrapper = styled.div<{ $outline: boolean }>`
-    width: 80px;
+    width: 90px;
     height: 80px;
-    padding: 0 8px 0 0;
+    padding: 0 10px 0 0;
     overflow: hidden;
 
     img {
