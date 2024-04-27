@@ -1,10 +1,10 @@
 import { PicType, ResponseType } from '@models/types'
 
-export type PicsStateType = {
-    pics: PicType[]
+export type OtherPicsStateType = {
+    otherPics: PicType[]
 }
 
-export type PicsActionType = {
+export type OtherPicsActionType = {
     type: string
     payload: ResponseType
 }

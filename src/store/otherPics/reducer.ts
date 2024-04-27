@@ -1,15 +1,18 @@
-import { PicsActionType, PicsStateType } from './types'
+import { OtherPicsActionType, OtherPicsStateType } from './types'
 
 const initValue = {
-    pics: [],
+    otherPics: [],
 }
 
-export const picsReducer = (state: PicsStateType = initValue, action: PicsActionType): PicsStateType => {
+export const otherPicsReducer = (
+    state: OtherPicsStateType = initValue,
+    action: OtherPicsActionType
+): OtherPicsStateType => {
     switch (action.type) {
-        case 'SET_PICS':
+        case 'SET_OTHER_PICS':
             return {
                 ...state,
-                pics: action.payload.data.map(el => ({
+                otherPics: action.payload.data.map(el => ({
                     id: el.id,
                     title: el.title,
                     isPublic: el.is_public_domain,
