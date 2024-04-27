@@ -10,7 +10,7 @@ export const setOtherPicsAction = (response: ResponseType): OtherPicsActionType 
     }
 }
 
-export const loadPics = (): AppThunk => {
+export const loadOtherPics = (): AppThunk => {
     return async dispatch => {
         const otherPicsResponde = await getOtherPics()
         dispatch(setOtherPicsAction(otherPicsResponde))
