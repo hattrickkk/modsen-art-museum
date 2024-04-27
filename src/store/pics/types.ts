@@ -1,7 +1,8 @@
 import { PicType, ResponseType } from '@models/types'
 
 export type PicsStateType = {
-    list: PicType[]
+    pics: PicType[]
+    otherPics: PicType[]
 }
 
 export type PicsActionType = {
