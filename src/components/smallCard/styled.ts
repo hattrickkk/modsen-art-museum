@@ -3,6 +3,7 @@ import * as palette from '@constants/stylesConstants'
 
 export const StyledCardDescriptionWrapper = styled.div`
     flex: 1 1 200px;
+    align-self: center;
 `
 
 export const StyledSmallCardWrapper = styled.div`
@@ -30,21 +31,23 @@ export const StyledSmallCard = styled.div`
     margin: 0 0 25px 0;
 `
 
-export const StyledImageWrapper = styled.div`
+export const StyledImageWrapper = styled.div<{ $outline: boolean }>`
     width: 80px;
+    height: 80px;
     padding: 0 8px 0 0;
     overflow: hidden;
 
     img {
+        border: ${props => (props.$outline ? `2px solid ${palette.ORANGE_COLOR}` : '')};
         width: 100%;
         height: 100%;
-
         object-fit: cover;
         object-position: center;
     }
 
     @media screen and (max-width: 1212px) {
         width: 135px;
+        height: 115px;
         padding: 0 17px 0 0;
     }
 

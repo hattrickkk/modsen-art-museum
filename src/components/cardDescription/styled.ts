@@ -19,6 +19,9 @@ export const StyledIcon = styled.div<{ $faved: boolean }>`
     &:hover {
         filter: brightness(90%);
     }
+    &:active {
+        filter: brightness(80%);
+    }
 
     @media screen and (max-width: 1212px) {
         width: 70px;
@@ -73,6 +76,6 @@ export const StyledAvailabilityInfo = styled.p`
     margin: 8px 0 0 0;
     font-weight: 700;
     @media screen and (max-width: 1212px) {
-        margin: 18px 0 0 0;
+        margin: 16px 0 0 0;
     }
 `
