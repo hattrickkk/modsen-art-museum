@@ -10,7 +10,7 @@ export const StyledFooter = styled.footer`
     }
 `
 
-export const StyledFooterInner = styled.footer`
+export const StyledFooterInner = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;

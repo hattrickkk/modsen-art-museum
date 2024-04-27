@@ -4,14 +4,20 @@ import { StyledContainer } from '@styles/styles'
 
 import logo from '@assets/logo.svg'
 import modsen from '@assets/modsen.svg'
+import { Link } from 'react-router-dom'
+import { MODSEN_URL } from '@constants/dataConstants'
 
 const Footer = () => {
     return (
         <StyledFooter>
             <StyledContainer>
                 <StyledFooterInner>
-                    <img src={logo} alt='logo' />
-                    <img src={modsen} alt='modsen' />
+                    <Link to='/'>
+                        <img src={logo} alt='logo' />
+                    </Link>
+                    <a href={MODSEN_URL} target='blank'>
+                        <img src={modsen} alt='modsen' />
+                    </a>
                 </StyledFooterInner>
             </StyledContainer>
         </StyledFooter>
