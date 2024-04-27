@@ -1,7 +1,7 @@
 import { OtherPicsActionType, OtherPicsStateType } from './types'
 
 const initValue = {
-    otherPics: [],
+    list: [],
 }
 
 export const otherPicsReducer = (
@@ -12,7 +12,7 @@ export const otherPicsReducer = (
         case 'SET_OTHER_PICS':
             return {
                 ...state,
-                otherPics: action.payload.data.map(el => ({
+                list: action.payload.data.map(el => ({
                     id: el.id,
                     title: el.title,
                     isPublic: el.is_public_domain,

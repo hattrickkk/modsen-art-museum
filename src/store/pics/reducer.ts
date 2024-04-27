@@ -1,7 +1,7 @@
 import { PicsActionType, PicsStateType } from './types'
 
 const initValue = {
-    pics: [],
+    list: [],
 }
 
 export const picsReducer = (state: PicsStateType = initValue, action: PicsActionType): PicsStateType => {
@@ -9,7 +9,7 @@ export const picsReducer = (state: PicsStateType = initValue, action: PicsAction
         case 'SET_PICS':
             return {
                 ...state,
-                pics: action.payload.data.map(el => ({
+                list: action.payload.data.map(el => ({
                     id: el.id,
                     title: el.title,
                     isPublic: el.is_public_domain,
