@@ -48,11 +48,11 @@ export const StyledTextContainer = styled.div<{ $small?: boolean }>`
     }
 
     @media screen and (max-width: 1280px) {
-        max-width: ${props => (props.$small ? 'calc(100% - 60px)' : '')};
+        max-width: ${props => (props.$small ? 'calc(100% - 60px)' : 'calc(100% - 70px)')};
     }
 
     @media screen and (max-width: 1216px) {
-        max-width: calc(100% - 90px);
+        max-width: calc(100% - 85px);
     }
 
     @media screen and (max-width: 1212px) {

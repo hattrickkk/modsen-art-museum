@@ -3,7 +3,7 @@ import * as palette from '@constants/stylesConstants'
 
 export const StyledCard = styled.div`
     flex: 0 1 33%;
-    padding: 0 15px;
+    padding: 0 30px;
 
     @media screen and (max-width: 1210px) and (min-width: 780px) {
         flex: 0 1 50%;

@@ -9,9 +9,12 @@ export const StyledCardDescriptionWrapper = styled.div`
 export const StyledSmallCardWrapper = styled.div`
     flex: 0 1 33%;
     padding: 0 8px;
+    height: 100%;
+    padding: 0 4px;
 
     @media screen and (max-width: 1212px) and (min-width: 780px) {
         flex: 0 1 50%;
+        padding: 0 8px;
 
         &:last-child:nth-child(odd) {
             flex: 0 1 70%;
