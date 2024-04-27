@@ -3,11 +3,13 @@ import thunkMiddleware, { ThunkAction, thunk } from 'redux-thunk'
 import { picsReducer } from './pics/reducer'
 import { favReducer } from './favorites/reducer'
 import { otherPicsReducer } from './otherPics/reducer'
+import { burgerMenuReducer } from './burgerMenu/reducer'
 
 const rootReducer = combineReducers({
     pics: picsReducer,
     otherPics: otherPicsReducer,
     favs: favReducer,
+    burgerMenu: burgerMenuReducer,
 })
 
 const store = configureStore({
