@@ -25,13 +25,13 @@ const HeaderNav = () => {
         <StyledHeaderNav>
             <StyledHeaderMenu $open={isOpen}>
                 {location !== '/' && (
-                    <HeaderNavItem path='/' onClick={burgerMenuToogle}>
+                    <HeaderNavItem path='/' onClick={() => dispath(closeBurgerMenuAction())}>
                         <HomeIcon />
                         <span>Home</span>
                     </HeaderNavItem>
                 )}
 
-                <HeaderNavItem path='/pictures/favorite' onClick={burgerMenuToogle}>
+                <HeaderNavItem path='/pictures/favorite' onClick={() => dispath(closeBurgerMenuAction())}>
                     {hasFavs ? <SaveIconNotEmpty /> : <SaveIcon />}
                     <span>Your favorites</span>
                 </HeaderNavItem>

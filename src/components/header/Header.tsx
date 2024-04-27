@@ -26,7 +26,7 @@ const Header = () => {
                             <img src={logo} alt='logo' />
                         </Link>
                     </StyledHeaderLogo>
-                    <HeaderNav/>
+                    <HeaderNav />
                 </Flex>
             </StyledContainer>
         </StyledHeader>
