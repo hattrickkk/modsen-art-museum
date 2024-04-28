@@ -1,21 +1,17 @@
 import React from 'react'
-
 import { Outlet } from 'react-router-dom'
 import { StyledMain, StyledPageWrapper } from './styled'
-import { StyledContainer } from '@styles/styles'
+import Footer from '@components/footer/Footer'
+import Header from '@components/header/Header'
 
 const Layout = () => {
     return (
         <StyledPageWrapper>
-            <StyledContainer>
-                <header>header</header>
-            </StyledContainer>
+            <Header />
             <StyledMain>
                 <Outlet />
             </StyledMain>
-            <StyledContainer>
-                <footer>footer</footer>
-            </StyledContainer>
+            <Footer />
         </StyledPageWrapper>
     )
 }

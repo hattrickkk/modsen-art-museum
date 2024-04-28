@@ -10,7 +10,8 @@
             "@utils/*": ["utils/*"],
             "@models/*": ["models/*"],
             "@store/*": ["store/*"],
-            "@assets/*": ["assets/*"]
+            "@assets/*": ["assets/*"],
+            "@pages/*": ["pages/*"]
         },
         "jsx": "react",
         "alwaysStrict": true,
