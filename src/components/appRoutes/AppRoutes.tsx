@@ -9,6 +9,7 @@ const AppRoutes = () => {
         <Routes>
             <Route path='/' element={<Layout />}>
                 <Route index element={<HomePage />} />
+                <Route path=':pageNumber' element={<HomePage />} />
                 <Route path='pictures/favorite' element={<FavoritesPage />} />
 
                 <Route path='*' element={<div>NOT FOUND</div>} />
