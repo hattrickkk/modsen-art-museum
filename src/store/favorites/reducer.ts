@@ -3,15 +3,7 @@ import { FavPicsActionType, FavPicsStateType } from './types'
 import { FavPicsActionNames } from './actions'
 
 const initValue: FavPicsStateType = {
-    list: [
-        {
-            id: 11393,
-            title: 'Panel (Furnishing Fabric)',
-            author: 'China, Guangzhou (Canton) or Macao',
-            isPublic: true,
-            image: '3e381d5a-3eac-e158-9b1e-8d65b78e2303',
-        },
-    ],
+    list: [],
 }
 
 export const favReducer = (state: FavPicsStateType = initValue, action: FavPicsActionType): FavPicsStateType => {

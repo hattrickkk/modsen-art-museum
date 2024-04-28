@@ -1,6 +1,6 @@
 import { PicsActionType, PicsStateType } from './types'
 
-const initValue = {
+const initValue: PicsStateType = {
     list: [],
 }
 
