@@ -13,14 +13,8 @@ export const StyledTitle = styled.h1`
     span {
         color: ${palette.DARK_ORANGE_COLOR};
 
-        &:first-child {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         svg {
-            margin: 0 30px 0 0;
+            margin: 0 30px 8px 0;
             transform: scale(2.3);
         }
     }
@@ -30,7 +24,7 @@ export const StyledTitle = styled.h1`
         line-height: 65px;
 
         span svg {
-            margin: 0 25px 0 0;
+            margin: 0 25px 4px 0;
             transform: scale(2.1);
         }
     }
