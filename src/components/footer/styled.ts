@@ -18,11 +18,11 @@ export const StyledFooterInner = styled.div`
     @media screen and (max-width: 470px) {
         flex-direction: column;
 
-        & > img {
+        & > a > img {
             display: block;
             max-height: 50px;
         }
-        & > img:first-child {
+        & > a:first-child > img {
             margin: 0 0 30px 0;
         }
     }

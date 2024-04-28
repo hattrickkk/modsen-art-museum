@@ -30,8 +30,14 @@ const GallerySection = () => {
         <StyledGallerySection>
             <StyledContainer>
                 <SectionTitle title='Our special gallery' subtitle='Topics for you' />
-                {!pics.length ? <Loader /> : <CardsContainer list={pics} big={true} />}
-                <Pagination currentPage={currentPage} pagesCount={totalPages} />
+                {!pics.length ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <CardsContainer list={pics} big={true} />
+                        <Pagination currentPage={currentPage} pagesCount={totalPages} />
+                    </>
+                )}
             </StyledContainer>
         </StyledGallerySection>
     )

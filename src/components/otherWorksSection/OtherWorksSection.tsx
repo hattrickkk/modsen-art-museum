@@ -21,7 +21,7 @@ const OtherWorksSection = () => {
         <StyledOtherWorksSection>
             <StyledContainer>
                 <SectionTitle title='Other works for you' subtitle='Here some more' />
-                {!otherPics.length ? <Loader /> : <CardsContainer list={otherPics} big={true} />}
+                {!otherPics.length ? <Loader /> : <CardsContainer list={otherPics} big={false} />}
             </StyledContainer>
         </StyledOtherWorksSection>
     )

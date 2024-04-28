@@ -8,9 +8,13 @@ export const StyledCardDescriptionWrapper = styled.div`
 
 export const StyledSmallCardWrapper = styled.div`
     flex: 0 1 33%;
-    padding: 0 8px;
     height: 100%;
     padding: 0 4px;
+
+    &:last-child {
+        margin: 0 0 0 4px;
+        margin-right: auto;
+    }
 
     @media screen and (max-width: 1212px) and (min-width: 780px) {
         flex: 0 1 50%;
@@ -19,6 +23,10 @@ export const StyledSmallCardWrapper = styled.div`
         &:last-child:nth-child(odd) {
             flex: 0 1 70%;
             margin: 0 auto;
+        }
+
+        &:last-child:nth-child(even) {
+            margin: 0;
         }
     }
 

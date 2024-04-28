@@ -5,10 +5,14 @@ export const StyledCard = styled.div`
     flex: 0 1 33%;
     padding: 0 30px;
 
-    @media screen and (max-width: 1210px) and (min-width: 780px) {
+    &:last-child {
+        margin-right: auto;
+    }
+
+    @media screen and (max-width: 1212px) and (min-width: 780px) {
         flex: 0 1 50%;
 
-        &:last-child {
+        &:last-child:nth-child(odd) {
             margin: -25px auto 0;
             flex: 0 1 70%;
         }
