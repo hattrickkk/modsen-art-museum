@@ -1,11 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
-import {
-    StyledAvailabilityInfo,
-    StyledDescription,
-    StyledParagraph,
-    StyledTextContainer,
-    StyledTitle,
-} from './styled'
+import { StyledAvailabilityInfo, StyledDescription, StyledParagraph, StyledTextContainer, StyledTitle } from './styled'
 import { Flex } from '@styles/flexStyles'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 import { PicType } from '@models/types'
@@ -14,6 +8,7 @@ import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites
 import { useDispatch, useSelector } from 'react-redux'
 import { isIdInFavorites } from '@utils/isIdInFavorites'
 import SaveButton from '@ui/saveButton/SaveButton'
+import { useClickFavs } from '@utils/hooks/useClickFav'
 
 type PropsType = {
     small?: boolean
@@ -21,13 +16,7 @@ type PropsType = {
 }
 
 const CardDescription = ({ small, item }: PropsType) => {
-    const dispath = useDispatch<AppDispatch>()
-    const favs: PicType[] = useSelector((state: AppState) => state.favs.list)
-    const isfav = useMemo(() => isIdInFavorites(item.id, favs), [favs])
-
-    const clickHandker = () => {
-        isfav ? dispath(removeFromFavoritesAction(item.id)) : dispath(setAsFavoriteAction(item))
-    }
+    const { isfav, clickHandker } = useClickFavs(item)
 
     return (
         <StyledDescription>
