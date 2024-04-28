@@ -1,0 +1,19 @@
+import { StyledButton } from '@ui/button/styled'
+import React from 'react'
+import { StyledSaveButton } from './styled'
+import SaveIcon from '@ui/saveIcon/SaveIcon'
+
+type PropsType = {
+    onClick: () => void
+    isFav: boolean
+}
+
+const SaveButton = ({ onClick, isFav }: PropsType) => {
+    return (
+        <StyledSaveButton onClick={onClick} $faved={isFav}>
+            <SaveIcon />
+        </StyledSaveButton>
+    )
+}
+
+export default SaveButton

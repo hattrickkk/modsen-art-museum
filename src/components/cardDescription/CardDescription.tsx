@@ -2,7 +2,6 @@ import React, { useCallback, useMemo } from 'react'
 import {
     StyledAvailabilityInfo,
     StyledDescription,
-    StyledIcon,
     StyledParagraph,
     StyledTextContainer,
     StyledTitle,
@@ -14,6 +13,7 @@ import { AppDispatch, AppState } from '@store/index'
 import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { isIdInFavorites } from '@utils/isIdInFavorites'
+import SaveButton from '@ui/saveButton/SaveButton'
 
 type PropsType = {
     small?: boolean
@@ -37,9 +37,7 @@ const CardDescription = ({ small, item }: PropsType) => {
                     <StyledParagraph>{item.author}</StyledParagraph>
                     <StyledAvailabilityInfo>{item.isPublic ? 'Public' : 'Proprietary'}</StyledAvailabilityInfo>
                 </StyledTextContainer>
-                <StyledIcon onClick={clickHandker} $faved={isfav}>
-                    <SaveIcon />
-                </StyledIcon>
+                <SaveButton onClick={clickHandker} isFav={isfav} />
             </Flex>
         </StyledDescription>
     )
