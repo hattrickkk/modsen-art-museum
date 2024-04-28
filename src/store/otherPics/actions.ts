@@ -1,7 +1,7 @@
 import { ResponseType } from '@models/types'
 import { AppThunk } from 'store'
-import { getOtherPics } from '@utils/api/getOtherPics'
 import { OtherPicsActionType } from './types'
+import { getPics } from '@utils/api/getPics'
 
 export const setOtherPicsAction = (response: ResponseType): OtherPicsActionType => {
     return {
@@ -12,7 +12,7 @@ export const setOtherPicsAction = (response: ResponseType): OtherPicsActionType 
 
 export const loadOtherPics = (): AppThunk => {
     return async dispatch => {
-        const otherPicsResponde = await getOtherPics()
+        const otherPicsResponde = await getPics(9)
         dispatch(setOtherPicsAction(otherPicsResponde))
     }
 }
