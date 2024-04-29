@@ -1,28 +1,17 @@
-import Card from '@components/card/Card'
-import SmallCard from '@components/smallCard/SmallCard'
-
-import { FlexContainer } from '@styles/flexStyles'
+import AppRoutes from '@components/appRoutes/AppRoutes'
+import { AppState } from '@store/index'
 import { GlobalStyles } from '@styles/global'
 import { NullStyles } from '@styles/nullStyles'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export const App = () => {
+    const isOpen = useSelector((state: AppState) => state.burgerMenu.isOpen)
     return (
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div>
             <NullStyles />
-            <GlobalStyles />
-
-            <FlexContainer $gap={15}>
-                <Card />
-                <Card />
-                <Card />
-            </FlexContainer>
-
-            <FlexContainer $gap={15}>
-                <SmallCard />
-                <SmallCard />
-                <SmallCard />
-            </FlexContainer>
+            <GlobalStyles $isBurgerMenuOpen={isOpen} />
+            <AppRoutes />
         </div>
-    )
+    ) 
 }
