@@ -1,9 +1,9 @@
 import CardDescription from '@components/cardDescription/CardDescription'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import defaultImage from '@assets/default.svg'
 import { Flex } from '@styles/flexStyles'
 import { StyledCardDescriptionWrapper, StyledImageWrapper, StyledSmallCard, StyledSmallCardWrapper } from './styled'
-import { PicType } from '@models/types'
+import { PicType } from '@models/picture'
 import { useNavigateToSinglePage } from '@utils/hooks/useNavigateToSinglePage'
 import { useImage } from '@utils/hooks/useImage'
 

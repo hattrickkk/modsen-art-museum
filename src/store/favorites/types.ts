@@ -1,4 +1,4 @@
-import { PicType } from '@models/types'
+import { PicType } from '@models/picture'
 
 export type FavPicsStateType = {
     list: PicType[]

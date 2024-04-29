@@ -1,4 +1,4 @@
-import { PicType } from '@models/types'
+import { PicType } from '@models/picture'
 import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
 import { AppDispatch, AppState } from '@store/index'
 import { isIdInFavorites } from '@utils/isIdInFavorites'

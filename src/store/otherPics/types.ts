@@ -1,4 +1,4 @@
-import { PicType, ResponseType } from '@models/types'
+import { PicType, ResponseType } from '@models/picture'
 
 export type OtherPicsStateType = {
     list: PicType[]

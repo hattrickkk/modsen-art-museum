@@ -1,4 +1,4 @@
-import { ResponseType } from '@models/types'
+import { ResponseType } from '@models/picture'
 import { AppThunk } from 'store'
 import { OtherPicsActionType } from './types'
 import { getPics } from '@utils/api/getPics'
