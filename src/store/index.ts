@@ -8,12 +8,15 @@ import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 import storage from 'redux-persist/lib/storage'
 import { PicsStateType } from './pics/types'
 import { OtherPicsStateType } from './otherPics/types'
+import { singlePicReducer } from './singlePic/reducer'
+import { SinglePicStateType } from './singlePic/types'
 
 const rootReducer = combineReducers({
     pics: picsReducer as Reducer<PicsStateType>,
     otherPics: otherPicsReducer as Reducer<OtherPicsStateType>,
     favs: favReducer,
     burgerMenu: burgerMenuReducer,
+    singlePicture: singlePicReducer as Reducer<SinglePicStateType>,
 })
 
 const persistConfig = {
