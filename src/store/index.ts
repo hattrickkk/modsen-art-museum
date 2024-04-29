@@ -10,6 +10,9 @@ import { PicsStateType } from './pics/types'
 import { OtherPicsStateType } from './otherPics/types'
 import { singlePicReducer } from './singlePic/reducer'
 import { SinglePicStateType } from './singlePic/types'
+import { searchReducer } from './search/reducer'
+import { SearchStateType } from './search/types'
+import { searchPreviewReducer } from './searchPreview/reducer'
 
 const rootReducer = combineReducers({
     pics: picsReducer as Reducer<PicsStateType>,
@@ -17,6 +20,8 @@ const rootReducer = combineReducers({
     favs: favReducer,
     burgerMenu: burgerMenuReducer,
     singlePicture: singlePicReducer as Reducer<SinglePicStateType>,
+    search: searchReducer as Reducer<SearchStateType>,
+    searchPreview: searchPreviewReducer,
 })
 
 const persistConfig = {
