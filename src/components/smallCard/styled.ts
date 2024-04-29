@@ -41,6 +41,7 @@ export const StyledSmallCard = styled.div`
     padding: 16px;
     margin: 0 0 16px 0;
     background-color: ${palette.WHITE_COLOR};
+    cursor: pointer;
 `
 
 export const StyledImageWrapper = styled.div<{ $outline: boolean }>`

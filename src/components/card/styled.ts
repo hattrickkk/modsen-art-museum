@@ -31,6 +31,7 @@ export const StyledCard = styled.div`
 export const StyledDescriptionWrapper = styled.div`
     max-width: calc(100% - 50px);
     transform: translate(25px, -50%);
+    cursor: pointer;
 
     & > div {
         padding: 20px 24px;
@@ -48,6 +49,7 @@ export const StyledImageContainer = styled.div<{ $outline: boolean }>`
     width: 100%;
     overflow: hidden;
     height: 470px;
+    cursor:pointer;
 
     border: ${props => (props.$outline ? `4px solid ${palette.ORANGE_COLOR}` : '')};
 

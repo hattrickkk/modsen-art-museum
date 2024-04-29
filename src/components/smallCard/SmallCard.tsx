@@ -4,20 +4,18 @@ import defaultImage from '@assets/default.svg'
 import { Flex } from '@styles/flexStyles'
 import { StyledCardDescriptionWrapper, StyledImageWrapper, StyledSmallCard, StyledSmallCardWrapper } from './styled'
 import { PicType } from '@models/types'
+import { useNavigateToSinglePage } from '@utils/hooks/useNavigateToSinglePage'
+import { useImage } from '@utils/hooks/useImage'
 
 type PropsType = {
     item: PicType
 }
 
 const SmallCard = ({ item }: PropsType) => {
-    const [imageURL, setImageURL] = useState<null | string>(null)
-
-    useEffect(() => {
-        fetch(item.image as string).then(res => setImageURL(res.status === 200 ? item.image : null))
-    }, [])
-
+    const imageURL = useImage(item.image as string)
+    const navigateToSinglePageById = useNavigateToSinglePage(item.id)
     return (
-        <StyledSmallCardWrapper>
+        <StyledSmallCardWrapper onClick={navigateToSinglePageById}>
             <StyledSmallCard>
                 <Flex>
                     <StyledImageWrapper $outline={!imageURL}>

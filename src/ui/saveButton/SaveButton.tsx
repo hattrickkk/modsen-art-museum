@@ -10,8 +10,8 @@ type PropsType = {
 
 const SaveButton = ({ onClick, isFav }: PropsType) => {
     return (
-        <StyledSaveButton onClick={onClick} $faved={isFav}>
-            <SaveIcon />
+        <StyledSaveButton onClick={onClick} $faved={isFav} className='save-button'>
+            <SaveIcon/>
         </StyledSaveButton>
     )
 }
