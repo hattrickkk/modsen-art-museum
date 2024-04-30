@@ -7,7 +7,15 @@ type PropsType = {
 }
 
 const SearchInput = ({ placeholder, onChange }: PropsType) => {
-    return <StyledSearchInput type='text' name='search' placeholder={placeholder} onChange={onChange} />
+    return (
+        <StyledSearchInput
+            className='search-input'
+            type='text'
+            name='search'
+            placeholder={placeholder}
+            onChange={onChange}
+        />
+    )
 }
 
 export default SearchInput

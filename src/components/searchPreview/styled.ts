@@ -21,3 +21,9 @@ export const StyledPreviewWrapper = styled.div<{ $open: boolean }>`
         max-height: 529px;
     }
 `
+
+export const StyledPreviewViewAll = styled.div`
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+`

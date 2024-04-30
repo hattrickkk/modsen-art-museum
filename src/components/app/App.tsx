@@ -13,7 +13,7 @@ export const App = () => {
 
     const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
         if (isSearchPreviewOpen) {
-            if (!(e.target as HTMLElement).closest('.preview')) {
+            if (!(e.target as HTMLElement).closest('.preview') && !(e.target as HTMLElement).closest('.search-input')) {
                 dispath(hideSearchPreviewAction())
             }
         }

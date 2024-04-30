@@ -30,7 +30,7 @@ const Search = () => {
 
     const handleSubmit = (values: { search: string }) => {
         debouncedSendQuery(values.search)
-        navigate('/seacrh')
+        navigate('/search')
     }
 
     return (
