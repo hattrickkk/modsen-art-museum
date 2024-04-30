@@ -35,7 +35,7 @@ const GallerySection = () => {
                 ) : (
                     <>
                         <CardsContainer list={pics} big={true} />
-                        <Pagination currentPage={currentPage} pagesCount={totalPages} />
+                        <Pagination currentPage={currentPage} pagesCount={totalPages} path='/' />
                     </>
                 )}
             </StyledContainer>
