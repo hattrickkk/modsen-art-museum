@@ -11,9 +11,8 @@ export const StyledSmallCardWrapper = styled.div`
     height: 100%;
     padding: 0 4px;
 
-    &:last-child {
-        margin: 0 0 0 4px;
-        margin-right: auto;
+    &:nth-child(3n-1):last-child {
+        margin: 0 auto 0 5px;
     }
 
     @media screen and (max-width: 1212px) and (min-width: 780px) {
