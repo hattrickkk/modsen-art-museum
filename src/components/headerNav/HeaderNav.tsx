@@ -1,14 +1,12 @@
 import { AppDispatch, AppState } from '@store/index'
-import BurgerMenuButton from '@ui/burgerMenuButton/BurgerMenuButton'
 import HomeIcon from '@ui/homeIcon/HomeIcon'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 import SaveIconNotEmpty from '@ui/saveIcon/SaveIconNotEmpty'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
-import { StyledHeaderNav, StyledHeaderMenu } from './styled'
+import { Link, useLocation } from 'react-router-dom'
+import { StyledHeaderNav, StyledHeaderMenu, StyledHeaderMenuItem, StyledHeaderBurger } from './styled'
 import { closeBurgerMenuAction, openBurgerMenuAction } from '@store/burgerMenu/actions'
-import HeaderNavItem from '@components/headerNavItem/HeaderNavItem'
 
 const HeaderNav = () => {
     const location = useLocation().pathname
@@ -25,19 +23,24 @@ const HeaderNav = () => {
         <StyledHeaderNav>
             <StyledHeaderMenu $open={isOpen}>
                 {location !== '/' && (
-                    <HeaderNavItem path='/' onClick={() => dispath(closeBurgerMenuAction())}>
-                        <HomeIcon />
-                        <span>Home</span>
-                    </HeaderNavItem>
+                    <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
+                        <Link to={'/'}>
+                            <HomeIcon />
+                            <span>Home</span>
+                        </Link>
+                    </StyledHeaderMenuItem>
                 )}
-
-                <HeaderNavItem path='/pictures/favorite' onClick={() => dispath(closeBurgerMenuAction())}>
-                    {hasFavs ? <SaveIconNotEmpty /> : <SaveIcon />}
-                    <span>Your favorites</span>
-                </HeaderNavItem>
+                <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
+                    <Link to={'/pictures/favorite'}>
+                        {hasFavs ? <SaveIconNotEmpty /> : <SaveIcon />}
+                        <span>Your favorites</span>
+                    </Link>
+                </StyledHeaderMenuItem>
             </StyledHeaderMenu>
 
-            <BurgerMenuButton isOpen={isOpen} clickHandler={burgerMenuToogle} />
+            <StyledHeaderBurger $open={isOpen} onClick={burgerMenuToogle}>
+                <span></span>
+            </StyledHeaderBurger>
         </StyledHeaderNav>
     )
 }
