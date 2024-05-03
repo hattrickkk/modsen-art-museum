@@ -62,3 +62,62 @@ export const StyledSinglePicDescriptionWrapper = styled.div`
         padding: 40px 0 0 0;
     }
 `
+
+export const StyledSinglePicInfo = styled.div`
+    @media screen and (max-width: 910px) {
+        margin: 0 0 80px 0;
+    }
+
+    @media screen and (max-width: 620px) {
+        margin: 0 0 50px 0;
+    }
+`
+
+export const StyledSinglePicTitle = styled.h1`
+    font-size: 32px;
+    line-height: 38px;
+    margin: 0 0 35px 0;
+`
+
+export const StyledSinglePicAuthor = styled.p`
+    font-size: 24px;
+    margin: 0 0 18px 0;
+    color: ${palette.ORANGE_COLOR};
+`
+
+export const StyledSinglePicDate = styled.p`
+    font-weight: 700;
+`
+
+export const StyledOverviewTitle = styled.h2`
+    font-size: 32px;
+    margin: 0 0 35px 0;
+
+    @media screen and (max-width: 620px) {
+        font-size: 28px;
+        margin: 0 0 24px 0;
+    }
+`
+
+export const StyledOverviewMenu = styled.ul`
+    & > *:not(:last-child) {
+        margin: 0 0 10px 0;
+    }
+`
+
+export const StyledOverviewItem = styled.li<{ $isBig?: boolean }>`
+    ${props =>
+        props.$isBig &&
+        `& span:last-child{
+            max-height: 150px;
+            display: block;
+            overflow-y: scroll;
+            padding: 0 7px 0 0;
+        }`}
+
+    line-height: 18px;
+    & span:first-child {
+        margin: 0 10px 0 0;
+        color: ${palette.ORANGE_COLOR};
+    }
+`

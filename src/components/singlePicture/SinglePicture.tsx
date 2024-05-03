@@ -1,9 +1,19 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { StyledSinglePicDescriptionWrapper, StyledSinglePicImageWrapper, StyledSinglePicture } from './styled'
+import React, { useEffect, useState } from 'react'
+import {
+    StyledOverviewItem,
+    StyledOverviewMenu,
+    StyledOverviewTitle,
+    StyledSinglePicAuthor,
+    StyledSinglePicDate,
+    StyledSinglePicDescriptionWrapper,
+    StyledSinglePicImageWrapper,
+    StyledSinglePicInfo,
+    StyledSinglePicTitle,
+    StyledSinglePicture,
+} from './styled'
 import defaultImage from '@assets/default.svg'
 import SaveButton from '@ui/saveButton/SaveButton'
 import { PicType } from '@models/picture'
-import Overview from '@components/overview/Overview'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '@store/index'
@@ -11,7 +21,6 @@ import { loadSinglePic } from '@store/singlePic/actions'
 import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
 import { isIdInFavorites } from '@utils/isIdInFavorites'
 import { getMappedObject } from '@utils/getMapedObj'
-import SinglePictureInfo from '@components/singlePictureInfo/SinglePictureInfo'
 
 const SinglePicture = () => {
     const { picId } = useParams()
@@ -47,8 +56,41 @@ const SinglePicture = () => {
                 <img src={imageURL ? imageURL : defaultImage} alt='' />
             </StyledSinglePicImageWrapper>
             <StyledSinglePicDescriptionWrapper>
-                <SinglePictureInfo item={singlePic} />
-                <Overview item={singlePic} />
+                <StyledSinglePicInfo>
+                    <StyledSinglePicTitle>{singlePic.title}</StyledSinglePicTitle>
+                    <StyledSinglePicAuthor>{singlePic.author}</StyledSinglePicAuthor>
+                    <StyledSinglePicDate>{singlePic.dateDisplay}</StyledSinglePicDate>
+                </StyledSinglePicInfo>
+                <div>
+                    <StyledOverviewTitle>Overview</StyledOverviewTitle>
+                    <StyledOverviewMenu>
+                        {singlePic.authorNationality && (
+                            <StyledOverviewItem>
+                                <span>Artist nationality:</span>
+                                {singlePic.authorNationality}
+                            </StyledOverviewItem>
+                        )}
+                        {singlePic.dimensions && (
+                            <StyledOverviewItem>
+                                <span>Dimensions:</span>
+                                {singlePic.dimensions}
+                            </StyledOverviewItem>
+                        )}
+                        {singlePic.creditLine && (
+                            <StyledOverviewItem>
+                                <span>Creadit Line:</span>
+                                {singlePic.creditLine}
+                            </StyledOverviewItem>
+                        )}
+                        {singlePic.exhibitionHistory && (
+                            <StyledOverviewItem $isBig={!!(singlePic.exhibitionHistory.length > 700)}>
+                                <span>Repository:</span>
+                                <span>{singlePic.exhibitionHistory}</span>
+                            </StyledOverviewItem>
+                        )}
+                        <StyledOverviewItem>{singlePic.isPublic ? 'Public' : 'Proprietary'}</StyledOverviewItem>
+                    </StyledOverviewMenu>
+                </div>
             </StyledSinglePicDescriptionWrapper>
         </StyledSinglePicture>
     )
