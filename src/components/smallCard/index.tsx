@@ -1,4 +1,4 @@
-import CardDescription from '@components/cardDescription/CardDescription'
+import CardDescription from '@components/cardDescription'
 import React from 'react'
 import defaultImage from '@assets/default.svg'
 import { Flex } from '@styles/flexStyles'

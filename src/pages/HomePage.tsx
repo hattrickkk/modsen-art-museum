@@ -1,9 +1,9 @@
-import OtherWorksSection from '@components/otherWorksSection/OtherWorksSection'
+import OtherWorksSection from '@components/otherWorksSection'
 import {StyledPage } from '@styles/styles'
 import React from 'react'
 import Title from '@ui/title/Title'
-import GallerySection from '@components/gallerySection/GallerySection'
-import SearchBlock from '@components/searchBlock/SearchBlock'
+import GallerySection from '@components/gallerySection'
+import SearchBlock from '@components/searchBlock'
 
 const HomePage = () => {
     return (

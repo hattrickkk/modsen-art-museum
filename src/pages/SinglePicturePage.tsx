@@ -1,4 +1,4 @@
-import SinglePicture from '@components/singlePicture/SinglePicture'
+import SinglePicture from '@components/singlePicture'
 import { StyledPage, StyledContainer } from '@styles/styles'
 import React from 'react'
 

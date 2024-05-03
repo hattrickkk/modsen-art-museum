@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { StyledGallerySection } from './styled'
 import { StyledContainer } from '@styles/styles'
 import SectionTitle from '@ui/sectionTitle/SectionTitle'
-import CardsContainer from '@components/cardsContainer/CardsContainer'
+import CardsContainer from '@components/cardsContainer'
 import Loader from '@ui/loader/Loader'
 import { AppDispatch, AppState } from '@store/index'
 import { loadPics } from '@store/pics/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import Pagination from '@components/pagination/Pagination'
+import Pagination from '@components/pagination'
 
 const GallerySection = () => {
     const dispath = useDispatch<AppDispatch>()

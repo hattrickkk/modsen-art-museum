@@ -1,4 +1,4 @@
-import SearchResults from '@components/searchresults/SearchResults'
+import SearchResults from '@components/searchresults'
 import { AppState } from '@store/index'
 import { StyledContainer, StyledEmptyPageText, StyledPage } from '@styles/styles'
 import Title from '@ui/title/Title'

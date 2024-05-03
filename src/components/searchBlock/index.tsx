@@ -9,7 +9,7 @@ import {
     StyledSearchBlockWrapper,
     StyledSearchInput,
 } from './styled'
-import SmallCard from '@components/smallCard/SmallCard'
+import SmallCard from '@components/smallCard'
 import { AppState, AppDispatch } from '@store/index'
 import { showSearchPreciewAction, hideSearchPreviewAction } from '@store/searchPreview/actions'
 import { useSelector, useDispatch } from 'react-redux'

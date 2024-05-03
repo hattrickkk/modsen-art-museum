@@ -1,10 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { StyledMain, StyledPageWrapper } from './styled'
-import Footer from '@components/footer/Footer'
-import Header from '@components/header/Header'
+import Footer from '@components/footer'
+import Header from '@components/header'
 import { ErrorBoundary } from 'react-error-boundary'
-import ErrorFallback from '@components/errorFallback/ErrorFalback'
+import ErrorFallback from '@components/errorFallback'
 
 const Layout = () => {
     return (

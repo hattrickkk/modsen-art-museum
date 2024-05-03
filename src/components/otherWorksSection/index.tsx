@@ -5,7 +5,7 @@ import { StyledOtherWorksSection } from './styled'
 import { AppDispatch, AppState } from '@store/index'
 import { loadOtherPics } from '@store/otherPics/actions'
 import { useDispatch, useSelector } from 'react-redux'
-import CardsContainer from '@components/cardsContainer/CardsContainer'
+import CardsContainer from '@components/cardsContainer'
 import Loader from '@ui/loader/Loader'
 
 const OtherWorksSection = () => {

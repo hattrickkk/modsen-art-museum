@@ -1,5 +1,5 @@
-import Card from '@components/card/Card'
-import SmallCard from '@components/smallCard/SmallCard'
+import Card from '@components/card'
+import SmallCard from '@components/smallCard'
 import { PicType } from '@models/picture'
 import { FlexContainer } from '@styles/flexStyles'
 import React from 'react'

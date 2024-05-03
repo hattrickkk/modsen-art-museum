@@ -1,4 +1,4 @@
-import CardsContainer from '@components/cardsContainer/CardsContainer'
+import CardsContainer from '@components/cardsContainer'
 import { AppDispatch, AppState } from '@store/index'
 import { StyledContainer } from '@styles/styles'
 import React, { useEffect, useState } from 'react'
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StyledSearchResultsWrapper } from './styled'
 import { useParams } from 'react-router-dom'
 import { loadSearchResults } from '@store/search/actions'
-import Pagination from '@components/pagination/Pagination'
+import Pagination from '@components/pagination'
 
 const SearchResults = () => {
     const dispath = useDispatch<AppDispatch>()

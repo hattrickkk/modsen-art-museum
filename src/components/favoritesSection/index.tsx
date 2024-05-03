@@ -1,4 +1,4 @@
-import CardsContainer from '@components/cardsContainer/CardsContainer'
+import CardsContainer from '@components/cardsContainer'
 import { StyledContainer } from '@styles/styles'
 import Button from '@ui/button/Button'
 import SectionTitle from '@ui/sectionTitle/SectionTitle'

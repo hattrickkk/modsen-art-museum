@@ -1,4 +1,4 @@
-import AppRoutes from '@components/appRoutes/AppRoutes'
+import AppRoutes from '@components/appRoutes'
 import { AppDispatch, AppState } from '@store/index'
 import { hideSearchPreviewAction } from '@store/searchPreview/actions'
 import { GlobalStyles } from '@styles/global'
