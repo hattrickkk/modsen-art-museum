@@ -1,4 +1,4 @@
-import { PaginationType, PicType, ResponseType } from '@models/picture'
+import { PicType, ResponseType } from '@customTypes/picture'
 
 export type SearchStateType = {
     list: PicType[]

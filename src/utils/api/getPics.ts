@@ -1,4 +1,4 @@
-import { ResponseType } from '@models/picture'
+import { ResponseType } from '@customTypes/picture'
 
 export const getPics = async (limit: number, page: number = 1): Promise<ResponseType> => {
     const response = await fetch(

@@ -3,7 +3,7 @@ import React from 'react'
 import defaultImage from '@assets/default.svg'
 import { Flex } from '@styles/flexStyles'
 import { StyledCardDescriptionWrapper, StyledImageWrapper, StyledSmallCard, StyledSmallCardWrapper } from './styled'
-import { PicType } from '@models/picture'
+import { PicType } from '@customTypes/picture'
 import { useNavigateToSinglePage } from '@utils/hooks/useNavigateToSinglePage'
 import { useImage } from '@utils/hooks/useImage'
 

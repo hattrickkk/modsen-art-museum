@@ -52,7 +52,7 @@ module.exports = {
             '@constants': path.resolve(__dirname, 'src/constants'),
             '@ui': path.resolve(__dirname, 'src/ui'),
             '@utils': path.resolve(__dirname, 'src/utils'),
-            '@models': path.resolve(__dirname, 'src/models'),
+            '@customTypes': path.resolve(__dirname, 'src/customTypes'),
             '@store': path.resolve(__dirname, 'src/store'),
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@pages': path.resolve(__dirname, 'src/pages'),

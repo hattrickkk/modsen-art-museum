@@ -1,4 +1,4 @@
-import { SinglePictureResponseType } from '@models/singlePicture'
+import { SinglePictureResponseType } from '@customTypes/singlePicture'
 import { AppThunk } from 'store'
 import { SinglePicActionType } from './types'
 import { getPicById } from '@utils/api/getPicById'

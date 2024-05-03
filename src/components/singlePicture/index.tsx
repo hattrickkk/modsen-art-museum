@@ -13,7 +13,7 @@ import {
 } from './styled'
 import defaultImage from '@assets/default.svg'
 import SaveButton from '@ui/saveButton/SaveButton'
-import { PicType } from '@models/picture'
+import { PicType } from '@customTypes/picture'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '@store/index'

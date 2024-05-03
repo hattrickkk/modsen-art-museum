@@ -3,7 +3,7 @@ import defaultImage from '@assets/default.svg'
 import { StyledCard, StyledDescriptionWrapper, StyledImageContainer } from './styled'
 import { Flex } from '@styles/flexStyles'
 import CardDescription from '@components/cardDescription'
-import { PicType } from '@models/picture'
+import { PicType } from '@customTypes/picture'
 import { useNavigateToSinglePage } from '@utils/hooks/useNavigateToSinglePage'
 import { useImage } from '@utils/hooks/useImage'
 

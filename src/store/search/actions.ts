@@ -1,4 +1,4 @@
-import { ResponseType } from '@models/picture'
+import { ResponseType } from '@customTypes/picture'
 import { AppThunk } from 'store'
 import { SearchActionType } from './types'
 import { getSearchResults } from '@utils/api/getSearchResults'

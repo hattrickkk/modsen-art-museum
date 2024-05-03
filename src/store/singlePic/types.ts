@@ -1,4 +1,4 @@
-import { SinglePicType, SinglePictureResponseType } from "@models/singlePicture"
+import { SinglePicType, SinglePictureResponseType } from 'customTypes/singlePicture'
 
 export type SinglePicStateType = {
     item: SinglePicType

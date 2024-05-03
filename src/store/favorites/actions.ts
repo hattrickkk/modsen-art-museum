@@ -1,4 +1,4 @@
-import { PicType } from '@models/picture'
+import { PicType } from '@customTypes/picture'
 import { FavPicsActionType } from './types'
 
 export const FavPicsActionNames = {

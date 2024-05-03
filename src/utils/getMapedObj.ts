@@ -1,5 +1,5 @@
-import { PicType } from '@models/picture'
-import { SinglePicType } from '@models/singlePicture'
+import { PicType } from '@customTypes/picture'
+import { SinglePicType } from 'customTypes/singlePicture'
 
 export const getMappedObject = (item: SinglePicType): PicType => {
     return {

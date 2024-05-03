@@ -1,4 +1,4 @@
-import { SinglePictureResponseType } from '@models/singlePicture'
+import { SinglePictureResponseType } from '@customTypes/singlePicture'
 
 export const getPicById = async (id: number): Promise<SinglePictureResponseType> => {
     const response = await fetch(
