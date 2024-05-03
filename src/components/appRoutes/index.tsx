@@ -5,20 +5,19 @@ import { Route, Routes } from 'react-router-dom'
 import FavoritesPage from '@pages/FavoritesPage'
 import SinglePicturePage from '@pages/SinglePicturePage'
 import SearchPage from '@pages/SearchPage'
+import * as paths from '@constants/paths'
 
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path='/' element={<Layout />}>
+            <Route path={paths.HOME_PAGE} element={<Layout />}>
                 <Route index element={<HomePage />} />
-                <Route path=':pageNumber' element={<HomePage />} />
-                <Route path='pictures/favorite' element={<FavoritesPage />} />
-                <Route path='picture/:picId' element={<SinglePicturePage />} />
+                <Route path={paths.HOME_PAGE_WITH_ENDPOINT} element={<HomePage />} />
+                <Route path={paths.FAVORITES_PAGE} element={<FavoritesPage />} />
+                <Route path={paths.SINGLE_PAGE_WITH_ENDPOINT} element={<SinglePicturePage />} />
+                <Route path={paths.SEARCH_PAGE_WITH_ENDPOINT} element={<SearchPage />} />
 
-                <Route path='search' element={<SearchPage />} />
-                <Route path='search/:searchPageNumber' element={<SearchPage />} />
-
-                <Route path='*' element={<div>NOT FOUND</div>} />
+                <Route path={paths.NOT_FOUND_PAGE} element={<div>NOT FOUND</div>} />
             </Route>
         </Routes>
     )

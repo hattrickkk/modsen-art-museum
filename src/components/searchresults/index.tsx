@@ -7,6 +7,7 @@ import { StyledSearchResultsWrapper } from './styled'
 import { useParams } from 'react-router-dom'
 import { loadSearchResults } from '@store/search/actions'
 import Pagination from '@components/pagination'
+import * as paths from '@constants/paths'
 
 const SearchResults = () => {
     const dispath = useDispatch<AppDispatch>()
@@ -32,7 +33,7 @@ const SearchResults = () => {
                 <Pagination
                     currentPage={currentPage}
                     pagesCount={totalPages < 111 ? totalPages : 111}
-                    path={'/search/'}
+                    path={paths.SEARCH_PAGE}
                 />
             </StyledContainer>
         </StyledSearchResultsWrapper>

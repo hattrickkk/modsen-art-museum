@@ -17,6 +17,7 @@ import { closeBurgerMenuAction, openBurgerMenuAction } from '@store/burgerMenu/a
 import HomeIcon from '@ui/homeIcon/HomeIcon'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 import SaveIconNotEmpty from '@ui/saveIcon/SaveIconNotEmpty'
+import * as paths from '@constants/paths'
 
 const Header = () => {
     const isOpen = useSelector((state: AppState) => state.burgerMenu.isOpen)
@@ -37,22 +38,22 @@ const Header = () => {
                             isOpen && dispath(closeBurgerMenuAction())
                         }}
                     >
-                        <Link to={'/'}>
+                        <Link to={paths.HOME_PAGE}>
                             <img src={logo} alt='logo' />
                         </Link>
                     </StyledHeaderLogo>
                     <StyledHeaderNav>
                         <StyledHeaderMenu $open={isOpen}>
-                            {location !== '/' && (
+                            {location !== paths.HOME_PAGE && (
                                 <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
-                                    <Link to={'/'}>
+                                    <Link to={paths.HOME_PAGE}>
                                         <HomeIcon />
                                         <span>Home</span>
                                     </Link>
                                 </StyledHeaderMenuItem>
                             )}
                             <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
-                                <Link to={'/pictures/favorite'}>
+                                <Link to={paths.FAVORITES_PAGE}>
                                     {hasFavs ? <SaveIconNotEmpty /> : <SaveIcon />}
                                     <span>Your favorites</span>
                                 </Link>

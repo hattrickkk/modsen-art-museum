@@ -19,6 +19,7 @@ import { validationSchema } from '@utils/validation/validationSchema'
 import { Formik, Field, Form } from 'formik'
 import { loadSearchResults } from '@store/search/actions'
 import { debounce } from '@utils/debounce'
+import * as paths from '@constants/paths'
 
 const SearchBlock = () => {
     const search = useSelector((state: AppState) => state.search.list)
@@ -46,7 +47,7 @@ const SearchBlock = () => {
 
     const handleSubmit = (values: { search: string }) => {
         debouncedSendQuery(values.search)
-        navigate('/search')
+        navigate(`${paths.SEARCH_PAGE}1`)
     }
 
     return (
@@ -85,7 +86,9 @@ const SearchBlock = () => {
                         {search.map(el => (
                             <SmallCard key={el.id} item={el} />
                         ))}
-                        <StyledPreviewViewAll onClick={() => navigate('/search')}>View all...</StyledPreviewViewAll>
+                        <StyledPreviewViewAll onClick={() => navigate(`${paths.SEARCH_PAGE}1`)}>
+                            View all...
+                        </StyledPreviewViewAll>
                     </StyledPreviewWrapper>
                 </StyledSearchBlock>
             </StyledContainer>

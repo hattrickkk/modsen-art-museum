@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { MouseEvent } from 'react'
+import * as paths from '@constants/paths'
 
 type ReturnTypeHook = (e: MouseEvent<HTMLDivElement>) => void
 
@@ -11,7 +12,7 @@ export const useNavigateToSinglePage = (id: number): ReturnTypeHook => {
             e.preventDefault()
             return
         }
-        navigate('/picture/' + id)
+        navigate(`${paths.SINGLE_PAGE}${id}`)
     }
 
     return clickHandler

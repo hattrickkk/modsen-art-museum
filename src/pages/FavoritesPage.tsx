@@ -6,6 +6,7 @@ import FavoritesSection from '@components/favoritesSection'
 import { AppState } from '@store/index'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import * as paths from '@constants/paths'
 
 const FavoritesPage = () => {
     const favs = useSelector((state: AppState) => state.favs.list)
@@ -24,7 +25,7 @@ const FavoritesPage = () => {
             ) : (
                 <StyledContainer>
                     <StyledEmptyPageText>
-                        You haven't added anything to favorites yet. Do this on the <Link to={'/'}>home page</Link>.
+                        You haven't added anything to favorites yet. Do this on the <Link to={paths.HOME_PAGE}>home page</Link>.
                     </StyledEmptyPageText>
                 </StyledContainer>
             )}

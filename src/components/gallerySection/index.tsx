@@ -9,6 +9,7 @@ import { loadPics } from '@store/pics/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Pagination from '@components/pagination'
+import * as paths from '@constants/paths'
 
 const GallerySection = () => {
     const dispath = useDispatch<AppDispatch>()
@@ -35,7 +36,7 @@ const GallerySection = () => {
                 ) : (
                     <>
                         <CardsContainer list={pics} big={true} />
-                        <Pagination currentPage={currentPage} pagesCount={totalPages} path='/' />
+                        <Pagination currentPage={currentPage} pagesCount={totalPages} path={paths.HOME_PAGE} />
                     </>
                 )}
             </StyledContainer>

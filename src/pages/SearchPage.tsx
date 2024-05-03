@@ -5,6 +5,7 @@ import Title from '@ui/title/Title'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import * as paths from '@constants/paths'
 
 const SearchPage = () => {
     const searchResults = useSelector((state: AppState) => state.search.list)
@@ -19,7 +20,7 @@ const SearchPage = () => {
             ) : (
                 <StyledContainer>
                     <StyledEmptyPageText>
-                        Nothing found. You can search for paintings on the <Link to={'/'}>home page</Link>.
+                        Nothing found. You can search for paintings on the <Link to={paths.HOME_PAGE}>home page</Link>.
                     </StyledEmptyPageText>
                 </StyledContainer>
             )}
