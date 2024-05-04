@@ -1,5 +1,5 @@
 import { getPages } from '@utils/pagination/getPages'
-import React, { useEffect, useState } from 'react'
+import React, { useMemo } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import {
     StyledPagination,
@@ -17,10 +17,7 @@ type PropsType = {
 
 const Pagination = ({ currentPage, pagesCount, path }: PropsType) => {
     const navigate = useNavigate()
-    const [pages, setPages] = useState<ReturnType<typeof getPages>>([])
-    useEffect(() => {
-        setPages(getPages(currentPage, pagesCount))
-    }, [pagesCount, currentPage])
+    const pages = useMemo(() => getPages(currentPage, pagesCount), [pagesCount, currentPage])
 
     return (
         <StyledPagination>
