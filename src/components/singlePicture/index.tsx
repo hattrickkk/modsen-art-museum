@@ -21,6 +21,7 @@ import { loadSinglePic } from '@store/singlePic/actions'
 import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
 import { isIdInFavorites } from '@utils/isIdInFavorites'
 import { getMappedObject } from '@utils/getMapedObj'
+import { MAX_LENGTH_FOR_EXHIBITION_HISTORY_FIELD } from '@constants/magicNumbers'
 
 const SinglePicture = () => {
     const { picId } = useParams()
@@ -83,7 +84,11 @@ const SinglePicture = () => {
                             </StyledOverviewItem>
                         )}
                         {singlePic.exhibitionHistory && (
-                            <StyledOverviewItem $isBig={!!(singlePic.exhibitionHistory.length > 700)}>
+                            <StyledOverviewItem
+                                $isBig={
+                                    !!(singlePic.exhibitionHistory.length > MAX_LENGTH_FOR_EXHIBITION_HISTORY_FIELD)
+                                }
+                            >
                                 <span>Repository:</span>
                                 <span>{singlePic.exhibitionHistory}</span>
                             </StyledOverviewItem>

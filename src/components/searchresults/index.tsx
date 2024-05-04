@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import { loadSearchResults } from '@store/search/actions'
 import Pagination from '@components/pagination'
 import * as paths from '@constants/paths'
+import { COUNT_OF_AVAILABLE_SEARCH_RESULTS_PAGES } from '@constants/magicNumbers'
 
 const SearchResults = () => {
     const dispath = useDispatch<AppDispatch>()
@@ -32,7 +33,11 @@ const SearchResults = () => {
                 <CardsContainer big={false} list={searchResults} />
                 <Pagination
                     currentPage={currentPage}
-                    pagesCount={totalPages < 111 ? totalPages : 111}
+                    pagesCount={
+                        totalPages < COUNT_OF_AVAILABLE_SEARCH_RESULTS_PAGES
+                            ? totalPages
+                            : COUNT_OF_AVAILABLE_SEARCH_RESULTS_PAGES
+                    }
                     path={paths.SEARCH_PAGE}
                 />
             </StyledContainer>
