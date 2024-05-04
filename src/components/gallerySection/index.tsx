@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { StyledGallerySection } from './styled'
 import { StyledContainer } from '@styles/styles'
 import SectionTitle from '@ui/sectionTitle/SectionTitle'
 import CardsContainer from '@components/cardsContainer'
 import Loader from '@ui/loader/Loader'
-import { AppDispatch, AppState } from '@store/index'
-import { loadPics } from '@store/pics/actions'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Pagination from '@components/pagination'
 import * as paths from '@constants/paths'
+import { PicType } from '@customTypes/picture'
+import { getPics } from '@utils/api/getPics'
+import { getPicItem } from '@utils/getPicItem'
 
 const GallerySection = () => {
-    const dispath = useDispatch<AppDispatch>()
-    const pics = useSelector((state: AppState) => state.pics.list)
-    const totalPages = useSelector((state: AppState) => state.pics.totalPages)
-
     const { pageNumber } = useParams()
-    const [currentPage, setCurrentPage] = useState<number>(pageNumber ? +pageNumber : 1)
+    const currentPage: number = useMemo(() => (pageNumber ? +pageNumber : 1), [pageNumber])
+    const [totalPages, setTotalPages] = useState<number>(1)
+    const [pics, setPics] = useState<PicType[]>([])
 
     useEffect(() => {
-        setCurrentPage(pageNumber ? +pageNumber : 1)
-    }, [pageNumber])
-
-    useEffect(() => {
-        dispath(loadPics(currentPage))
+        getPics(3, currentPage)
+            .then(res => {
+                setTotalPages(res.pagination.total_pages)
+                return getPicItem(res)
+            })
+            .then(res => setPics(res))
     }, [currentPage])
 
     return (
