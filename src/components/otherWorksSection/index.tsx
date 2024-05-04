@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyledContainer } from '@styles/styles'
 import SectionTitle from '@ui/sectionTitle/SectionTitle'
 import { StyledOtherWorksSection } from './styled'
-import { AppDispatch, AppState } from '@store/index'
-import { loadOtherPics } from '@store/otherPics/actions'
-import { useDispatch, useSelector } from 'react-redux'
 import CardsContainer from '@components/cardsContainer'
 import Loader from '@ui/loader/Loader'
+import { getPics } from '@utils/api/getPics'
+import { PicType } from '@customTypes/picture'
+import { getPicItem } from '@utils/getPicItem'
 
 const OtherWorksSection = () => {
-    const dispath = useDispatch<AppDispatch>()
-
-    const otherPics = useSelector((state: AppState) => state.otherPics.list)
+    const [otherPics, setOtherPics] = useState<PicType[]>([])
 
     useEffect(() => {
-        dispath(loadOtherPics())
+        getPics(9)
+            .then(res => getPicItem(res))
+            .then(res => setOtherPics(res))
     }, [])
 
     return (
