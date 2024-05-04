@@ -1,11 +1,9 @@
 import { Action, Reducer, combineReducers, configureStore } from '@reduxjs/toolkit'
 import { ThunkAction, thunk } from 'redux-thunk'
-import { picsReducer } from './pics/reducer'
 import { favReducer } from './favorites/reducer'
 import { burgerMenuReducer } from './burgerMenu/reducer'
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { PicsStateType } from './pics/types'
 import { singlePicReducer } from './singlePic/reducer'
 import { SinglePicStateType } from './singlePic/types'
 import { searchReducer } from './search/reducer'
@@ -13,7 +11,6 @@ import { SearchStateType } from './search/types'
 import { searchPreviewReducer } from './searchPreview/reducer'
 
 const rootReducer = combineReducers({
-    pics: picsReducer as Reducer<PicsStateType>,
     favs: favReducer,
     burgerMenu: burgerMenuReducer,
     singlePicture: singlePicReducer as Reducer<SinglePicStateType>,
