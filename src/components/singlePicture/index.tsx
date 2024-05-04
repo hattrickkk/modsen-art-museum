@@ -13,47 +13,45 @@ import {
 } from './styled'
 import defaultImage from '@assets/default.svg'
 import SaveButton from '@ui/saveButton/SaveButton'
-import { PicType } from '@customTypes/picture'
 import { useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, AppState } from '@store/index'
-import { loadSinglePic } from '@store/singlePic/actions'
-import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
-import { isIdInFavorites } from '@utils/isIdInFavorites'
 import { getMappedObject } from '@utils/getMapedObj'
 import { MAX_LENGTH_FOR_EXHIBITION_HISTORY_FIELD } from '@constants/magicNumbers'
+import { getPicById } from '@utils/api/getPicById'
+import { SinglePicType } from '@customTypes/singlePicture'
+import { getSinglePicItem } from '@utils/getSinglePicItem'
+import { useImage } from '@utils/hooks/useImage'
+import { useClickFavs } from '@utils/hooks/useClickFav'
+
+const initValue: SinglePicType = {
+    author: '',
+    authorNationality: '',
+    creditLine: '',
+    dateDisplay: '',
+    dimensions: '',
+    exhibitionHistory: '',
+    id: 0,
+    image: '',
+    isPublic: false,
+    title: '',
+}
 
 const SinglePicture = () => {
     const { picId } = useParams()
-    const dispath = useDispatch<AppDispatch>()
-    const singlePic = useSelector((state: AppState) => state.singlePicture.item)
-    const favsFromState: PicType[] = useSelector((state: AppState) => state.favs.list)
-    const [imageURL, setImageURL] = useState<null | string>(null)
-    const [isFav, setIsFav] = useState<boolean>(isIdInFavorites(singlePic.id, favsFromState))
+    const [singlePic, setSinglePic] = useState<SinglePicType>(initValue)
+
+    const imageURL = useImage(singlePic.image as string, singlePic)
+    const { isfav, clickHandker } = useClickFavs(getMappedObject(singlePic), true)
 
     useEffect(() => {
-        dispath(loadSinglePic(+(picId as string)))
+        getPicById(+(picId as string))
+            .then(res => getSinglePicItem(res))
+            .then(res => setSinglePic(res))
     }, [picId])
-
-    useEffect(() => {
-        fetch(singlePic.image).then(res => setImageURL(res.status === 200 ? singlePic.image : null))
-        setIsFav(isIdInFavorites(singlePic.id, favsFromState))
-    }, [singlePic])
-
-    const saveButtonClickHandker = () => {
-        if (isFav) {
-            dispath(removeFromFavoritesAction(singlePic.id))
-            setIsFav(false)
-        } else {
-            dispath(setAsFavoriteAction(getMappedObject(singlePic)))
-            setIsFav(true)
-        }
-    }
 
     return (
         <StyledSinglePicture>
             <StyledSinglePicImageWrapper $outline={!imageURL}>
-                <SaveButton onClick={saveButtonClickHandker} isFav={isFav} />
+                <SaveButton onClick={clickHandker} isFav={isfav} />
                 <img src={imageURL ? imageURL : defaultImage} alt='' />
             </StyledSinglePicImageWrapper>
             <StyledSinglePicDescriptionWrapper>
