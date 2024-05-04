@@ -10,10 +10,11 @@ type UseClickFavsReturnType = {
     isfav: boolean
 }
 
-export const useClickFavs = (item: PicType): UseClickFavsReturnType => {
+export const useClickFavs = (item: PicType, isSinglePic: boolean = false): UseClickFavsReturnType => {
+    console.log(item)
     const dispath = useDispatch<AppDispatch>()
     const favs: PicType[] = useSelector((state: AppState) => state.favs.list)
-    const isfav = useMemo(() => isIdInFavorites(item.id, favs), [favs])
+    const isfav = isSinglePic ? isIdInFavorites(item.id, favs) : useMemo(() => isIdInFavorites(item.id, favs), [favs])
 
     const clickHandker = () => {
         isfav ? dispath(removeFromFavoritesAction(item.id)) : dispath(setAsFavoriteAction(item))
