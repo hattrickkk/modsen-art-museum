@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledSinglePicture = styled.div`
     display: flex;
     margin: 0 0 120px 0;
 
-    @media screen and (max-width: 910px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_LARGE} {
         flex-direction: column;
         margin: 0 0 90px 0;
     }
@@ -34,11 +35,11 @@ export const StyledSinglePicImageWrapper = styled.div<{ $outline: boolean }>`
         object-position: center;
     }
 
-    @media screen and (max-width: 1045px) {
+    @media ${breakpoints.MEDIA_QUERY_LAPTOP} {
         flex: 0 0 400px;
     }
 
-    @media screen and (max-width: 910px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_LARGE} {
         flex: 0 0 500px;
     }
 `
@@ -50,25 +51,25 @@ export const StyledSinglePicDescriptionWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
-    @media screen and (max-width: 1045px) {
+    @media ${breakpoints.MEDIA_QUERY_LAPTOP} {
         padding: 0 0 0 55px;
     }
 
-    @media screen and (max-width: 950px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         padding: 0 0 0 40px;
     }
 
-    @media screen and (max-width: 910px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_LARGE} {
         padding: 40px 0 0 0;
     }
 `
 
 export const StyledSinglePicInfo = styled.div`
-    @media screen and (max-width: 910px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_LARGE} {
         margin: 0 0 80px 0;
     }
 
-    @media screen and (max-width: 620px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_SMALL} {
         margin: 0 0 50px 0;
     }
 `
@@ -93,7 +94,7 @@ export const StyledOverviewTitle = styled.h2`
     font-size: 32px;
     margin: 0 0 35px 0;
 
-    @media screen and (max-width: 620px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_SMALL} {
         font-size: 28px;
         margin: 0 0 24px 0;
     }

@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledWrapper = styled.div`
     overflow: hidden;
@@ -14,11 +15,11 @@ export const StyledContainer = styled.div`
 export const StyledPage = styled.div`
     margin: 250px 0 0 0;
 
-    @media screen and (max-width: 980px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         margin: 200px 0 0 0;
     }
 
-    @media screen and (max-width: 500px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         margin: 180px 0 0 0;
     }
 `

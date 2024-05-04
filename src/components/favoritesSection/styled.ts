@@ -1,9 +1,10 @@
 import { styled } from 'styled-components'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledFavoritesSection = styled.section`
     margin: 120px 0;
 
-    @media screen and (max-width: 980px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         margin: 90px 0;
     }
 `

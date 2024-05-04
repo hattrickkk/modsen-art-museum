@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledSaveButton = styled.div<{ $faved: boolean }>`
     border-radius: 50%;
@@ -19,7 +20,7 @@ export const StyledSaveButton = styled.div<{ $faved: boolean }>`
         filter: brightness(80%);
     }
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         width: 70px;
         height: 70px;
     }

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledCardDescriptionWrapper = styled.div`
     flex: 1 1 200px;
@@ -15,7 +16,7 @@ export const StyledSmallCardWrapper = styled.div`
         margin: 0 auto 0 5px;
     }
 
-    @media screen and (max-width: 1212px) and (min-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_LARGE_RANGE} {
         flex: 0 1 50%;
         padding: 0 8px;
 
@@ -29,7 +30,7 @@ export const StyledSmallCardWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         flex: 0 1 100%;
         padding: 0;
     }
@@ -57,17 +58,17 @@ export const StyledImageWrapper = styled.div<{ $outline: boolean }>`
         object-position: center;
     }
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         width: 135px;
         height: 115px;
         padding: 0 17px 0 0;
     }
 
-    @media screen and (max-width: 862px) and (min-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_MEDIUM_RANGE} {
         display: none;
     }
 
-    @media screen and (max-width: 430px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_SMALL} {
         display: none;
     }
 `

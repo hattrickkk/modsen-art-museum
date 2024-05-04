@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledPagination = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         justify-content: space-between;
     }
 
-    @media screen and (max-width: 710px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_SMALL} {
         flex-wrap: wrap;
     }
 `
@@ -18,17 +19,17 @@ export const StyledPaginationPagesContainer = styled.div`
     margin: 0 20px;
     display: flex;
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         width: 100%;
         justify-content: space-between;
     }
 
-    @media screen and (max-width: 710px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_SMALL} {
         flex: 1 1 100%;
         margin: 0 0 35px 0;
     }
 
-    @media screen and (max-width: 615px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_SMALL} {
         flex-wrap: wrap;
     }
 `
@@ -70,11 +71,11 @@ export const StyledPaginationArrowWrapper = styled.div`
     transition: all linear 0.3s;
     cursor: pointer;
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         transform: scale(1.4);
     }
 
-    @media screen and (max-width: 710px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_SMALL} {
         &:first-child {
             margin-right: auto;
             padding: 0 0 0 15px;

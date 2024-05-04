@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledDescription = styled.div`
     background-color: ${palette.WHITE_COLOR};
@@ -23,15 +24,15 @@ export const StyledTextContainer = styled.div<{ $small?: boolean }>`
         -webkit-box-orient: vertical;
     }
 
-    @media screen and (max-width: 1280px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP} {
         max-width: ${props => (props.$small ? 'calc(100% - 60px)' : 'calc(100% - 70px)')};
     }
 
-    @media screen and (max-width: 1216px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         max-width: calc(100% - 85px);
     }
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         & > * {
             font-size: 20px;
             line-height: 35px;
@@ -43,7 +44,7 @@ export const StyledTitle = styled.h4`
     font-size: 17px;
     letter-spacing: -0.03em;
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         font-size: 20px;
     }
 `
@@ -54,7 +55,8 @@ export const StyledAvailabilityInfo = styled.p`
     margin: 8px 0 0 0;
     font-weight: 700;
     line-height: normal;
-    @media screen and (max-width: 1212px) {
+
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         margin: 16px 0 0 0;
     }
 `

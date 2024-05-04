@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as breakpoints from '@constants/breakpoints'
 
 type FlexPropsType = Partial<{
     $justifycontent: string
@@ -23,7 +24,7 @@ export const FlexContainer = styled(Flex)`
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         margin: 0;
     }
 `

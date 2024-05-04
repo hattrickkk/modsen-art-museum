@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledHeader = styled.header`
     padding: 32px 0;
@@ -8,7 +9,7 @@ export const StyledHeader = styled.header`
     z-index: 100;
     width: 100%;
 
-    @media screen and (max-width: 470px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         padding: 25px 0;
     }
 `
@@ -16,7 +17,7 @@ export const StyledHeaderLogo = styled.div`
     position: relative;
     z-index: 90;
 
-    @media screen and (max-width: 470px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         & > a > img {
             display: block;
             max-height: 50px;
@@ -34,7 +35,7 @@ export const StyledHeaderNav = styled.nav`
 export const StyledHeaderMenu = styled.ul<{ $open: boolean }>`
     display: flex;
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         position: absolute;
         background: linear-gradient(to right, #343333, #484848, #282828);
         left: ${props => (props.$open ? '0' : '110vw')};
@@ -84,7 +85,7 @@ export const StyledHeaderMenuItem = styled.li`
         }
     }
 
-    @media screen and (max-width: 980px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         font-size: 22px;
 
         a span {
@@ -96,7 +97,7 @@ export const StyledHeaderMenuItem = styled.li`
         }
     }
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         font-size: 34px;
         padding: 10px;
 
@@ -164,7 +165,7 @@ export const StyledHeaderBurger = styled.div<{ $open: boolean }>`
         }
     }
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         display: block;
     }
 `

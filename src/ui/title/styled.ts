@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledTitle = styled.h1`
     font-weight: 700;
@@ -19,7 +20,7 @@ export const StyledTitle = styled.h1`
         }
     }
 
-    @media screen and (max-width: 980px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         font-size: 55px;
         line-height: 65px;
 
@@ -29,7 +30,7 @@ export const StyledTitle = styled.h1`
         }
     }
 
-    @media screen and (max-width: 500px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         font-size: 50px;
         line-height: 60px;
 

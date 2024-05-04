@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledCard = styled.div`
     flex: 0 1 33%;
@@ -9,7 +10,7 @@ export const StyledCard = styled.div`
         margin-right: auto;
     }
 
-    @media screen and (max-width: 1212px) and (min-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_LARGE_RANGE} {
         flex: 0 1 50%;
 
         &:last-child:nth-child(odd) {
@@ -18,7 +19,7 @@ export const StyledCard = styled.div`
         }
     }
 
-    @media screen and (max-width: 780px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_NORMAL} {
         flex: 0 1 100%;
         padding: 0;
 
@@ -38,7 +39,7 @@ export const StyledDescriptionWrapper = styled.div`
         border: 2px solid ${palette.GRAY_COLOR};
     }
 
-    @media screen and (max-width: 500px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         & > div {
             padding: 20px;
         }
@@ -49,7 +50,7 @@ export const StyledImageContainer = styled.div<{ $outline: boolean }>`
     width: 100%;
     overflow: hidden;
     height: 470px;
-    cursor:pointer;
+    cursor: pointer;
 
     border: ${props => (props.$outline ? `4px solid ${palette.ORANGE_COLOR}` : '')};
 

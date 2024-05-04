@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledFooter = styled.footer`
     padding: 32px 0;
     background-color: ${palette.WHITE_COLOR};
 
-    @media screen and (max-width: 470px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         padding: 25px 0;
     }
 `
@@ -15,7 +16,7 @@ export const StyledFooterInner = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (max-width: 470px) {
+    @media ${breakpoints.MEDIA_QUERY_PHONE_NORMAL} {
         flex-direction: column;
 
         & > a > img {

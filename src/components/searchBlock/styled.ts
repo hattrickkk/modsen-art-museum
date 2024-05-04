@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import * as palette from '@constants/stylesConstants'
+import * as breakpoints from '@constants/breakpoints'
 
 export const StyledSearchBlockWrapper = styled.div`
     padding: 80px 0 0 0;
@@ -10,7 +11,7 @@ export const StyledSearchBlock = styled.div`
     width: 760px;
     margin: 0 auto;
 
-    @media screen and (max-width: 980px) {
+    @media ${breakpoints.MEDIA_QUERY_TABLET_EXTRA_LARGE} {
         width: 100%;
     }
 `
@@ -58,7 +59,7 @@ export const StyledPreviewWrapper = styled.div<{ $open: boolean }>`
         margin: 0 0 20px 0;
     }
 
-    @media screen and (max-width: 1212px) {
+    @media ${breakpoints.MEDIA_QUERY_DESKTOP_SMALL} {
         max-height: 529px;
     }
 `
