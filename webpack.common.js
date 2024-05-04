@@ -5,11 +5,9 @@ module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
-        filename: 'bundle.js',
-        // filename: '[name].[hash].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-
         publicPath: '/',
     },
 
@@ -31,7 +29,6 @@ module.exports = {
                 loader: 'file-loader',
             },
             {
-                // test: /\.tsx?$/,
                 test: /\.m?(ts|js)x?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
@@ -39,10 +36,6 @@ module.exports = {
         ],
     },
 
-    devServer: {
-        port: 3000,
-        historyApiFallback: true,
-    },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
