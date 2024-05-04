@@ -4,8 +4,6 @@ import { favReducer } from './favorites/reducer'
 import { burgerMenuReducer } from './burgerMenu/reducer'
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { singlePicReducer } from './singlePic/reducer'
-import { SinglePicStateType } from './singlePic/types'
 import { searchReducer } from './search/reducer'
 import { SearchStateType } from './search/types'
 import { searchPreviewReducer } from './searchPreview/reducer'
@@ -13,7 +11,6 @@ import { searchPreviewReducer } from './searchPreview/reducer'
 const rootReducer = combineReducers({
     favs: favReducer,
     burgerMenu: burgerMenuReducer,
-    singlePicture: singlePicReducer as Reducer<SinglePicStateType>,
     search: searchReducer as Reducer<SearchStateType>,
     searchPreview: searchPreviewReducer,
 })
