@@ -3,15 +3,14 @@ import { Outlet } from 'react-router-dom'
 import { StyledMain, StyledPageWrapper } from './styled'
 import Footer from '@components/footer'
 import Header from '@components/header'
-import { ErrorBoundary } from 'react-error-boundary'
-import ErrorFallback from '@components/errorFallback'
+import ErrorBoundary from '@components/errorBoundary'
 
 const Layout = () => {
     return (
         <StyledPageWrapper>
             <Header />
             <StyledMain>
-                <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <ErrorBoundary>
                     <Outlet />
                 </ErrorBoundary>
             </StyledMain>
