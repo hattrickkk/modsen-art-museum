@@ -1,5 +1,5 @@
 import { ResponseType } from '@customTypes/picture'
-import { AppThunk } from 'store'
+import { AppDispatch } from 'store'
 import { SearchActionType } from './types'
 import { getSearchResults } from '@utils/api/getSearchResults'
 
@@ -13,8 +13,8 @@ export const setSearchResultscAction = (response: ResponseType, searchText: stri
     }
 }
 
-export const loadSearchResults = (search: string, currentPage: number): AppThunk => {
-    return async dispatch => {
+export const loadSearchResults = (search: string, currentPage: number) => {
+    return async (dispatch: AppDispatch) => {
         const response = await getSearchResults(search, currentPage)
         dispatch(setSearchResultscAction(response, search))
     }
