@@ -1,17 +1,13 @@
 import { Reducer, combineReducers, configureStore } from '@reduxjs/toolkit'
 import { favReducer } from './favorites/reducer'
-import { burgerMenuReducer } from './burgerMenu/reducer'
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { searchReducer } from './search/reducer'
 import { SearchStateType } from './search/types'
-import { searchPreviewReducer } from './searchPreview/reducer'
 
 const rootReducer = combineReducers({
     favs: favReducer,
-    burgerMenu: burgerMenuReducer,
     search: searchReducer as Reducer<SearchStateType>,
-    searchPreview: searchPreviewReducer,
 })
 
 const persistConfig = {
