@@ -1,5 +1,5 @@
 import CardDescription from '@components/cardDescription'
-import React from 'react'
+import React, { memo } from 'react'
 import defaultImage from '@assets/default.svg'
 import { Flex } from '@styles/flexStyles'
 import { StyledCardDescriptionWrapper, StyledImageWrapper, StyledSmallCard, StyledSmallCardWrapper } from './styled'
@@ -31,4 +31,4 @@ const SmallCard = ({ item }: PropsType) => {
     )
 }
 
-export default SmallCard
+export default memo(SmallCard)

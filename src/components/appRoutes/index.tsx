@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, memo } from 'react'
 import Layout from '@components/layout'
 import { Route, Routes } from 'react-router-dom'
 import * as paths from '@constants/paths'
@@ -26,4 +26,4 @@ const AppRoutes = () => {
     )
 }
 
-export default AppRoutes
+export default memo(AppRoutes)

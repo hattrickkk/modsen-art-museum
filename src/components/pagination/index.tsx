@@ -1,5 +1,5 @@
 import { getPages } from '@utils/pagination/getPages'
-import React, { useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import {
     StyledPagination,
@@ -44,4 +44,4 @@ const Pagination = ({ currentPage, pagesCount, path }: PropsType) => {
     )
 }
 
-export default Pagination
+export default memo(Pagination)

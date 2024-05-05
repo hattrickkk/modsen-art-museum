@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledFooter, StyledFooterInner } from './styled'
 import { StyledContainer } from '@styles/styles'
 
@@ -25,4 +25,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default memo(Footer)

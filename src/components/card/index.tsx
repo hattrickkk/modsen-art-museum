@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import defaultImage from '@assets/default.svg'
 import { StyledCard, StyledDescriptionWrapper, StyledImageContainer } from './styled'
 import { Flex } from '@styles/flexStyles'
@@ -28,4 +28,4 @@ const Card = ({ item }: CardProps) => {
     )
 }
 
-export default Card
+export default memo(Card)
