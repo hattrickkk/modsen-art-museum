@@ -6,10 +6,12 @@ export type SearchStateType = {
     searchText: string
 }
 
+export type SearchActionPayloadType = {
+    response: ResponseType
+    searchText: string
+}
+
 export type SearchActionType = {
     type: string
-    payload: {
-        response: ResponseType
-        searchText: string
-    }
+    payload?: SearchActionPayloadType
 }
