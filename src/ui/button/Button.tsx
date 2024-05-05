@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledButton } from './styled'
 
 type PropsType = {
@@ -10,4 +10,4 @@ const Button = ({ value, onClick }: PropsType) => {
     return <StyledButton onClick={onClick}>{value}</StyledButton>
 }
 
-export default Button
+export default memo(Button)

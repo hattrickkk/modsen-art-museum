@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const SaveIconNotEmpty = () => {
     return (
@@ -18,4 +18,4 @@ const SaveIconNotEmpty = () => {
     )
 }
 
-export default SaveIconNotEmpty
+export default memo(SaveIconNotEmpty)

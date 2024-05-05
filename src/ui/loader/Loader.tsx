@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledLoader, StyledLoaderWrapper } from './styled'
 import { Flex } from '@styles/flexStyles'
 
@@ -12,4 +12,4 @@ const Loader = () => {
     )
 }
 
-export default Loader
+export default memo(Loader)

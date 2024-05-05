@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const PaginationArrow = ({ isBack }: { isBack?: boolean }) => {
     return isBack ? (
@@ -22,4 +22,4 @@ const PaginationArrow = ({ isBack }: { isBack?: boolean }) => {
     )
 }
 
-export default PaginationArrow
+export default memo(PaginationArrow)

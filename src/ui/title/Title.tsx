@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, memo } from 'react'
 import { StyledTitle } from './styled'
 import { StyledContainer } from '@styles/styles'
 
@@ -14,4 +14,4 @@ const Title = ({ children }: PropsType) => {
     )
 }
 
-export default Title
+export default memo(Title)

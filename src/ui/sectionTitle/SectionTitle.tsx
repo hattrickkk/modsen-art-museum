@@ -1,5 +1,5 @@
 import { StyledTitle } from '@components/cardDescription/styled'
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledSectionLabel, StyledSectionSubtitle, StyledSectionTitle } from './styled'
 
 type PropsType = {
@@ -16,4 +16,4 @@ const SectionTitle = ({ title, subtitle }: PropsType) => {
     )
 }
 
-export default SectionTitle
+export default memo(SectionTitle)

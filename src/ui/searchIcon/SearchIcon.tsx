@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const SearchIcon = () => {
     return (
@@ -15,4 +15,4 @@ const SearchIcon = () => {
     )
 }
 
-export default SearchIcon
+export default memo(SearchIcon)

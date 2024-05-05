@@ -1,5 +1,5 @@
 import { StyledButton } from '@ui/button/styled'
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledSaveButton } from './styled'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 
@@ -16,4 +16,4 @@ const SaveButton = ({ onClick, isFav }: PropsType) => {
     )
 }
 
-export default SaveButton
+export default memo(SaveButton)

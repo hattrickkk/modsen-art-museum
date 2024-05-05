@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const HomeIcon = () => {
     return (
@@ -21,4 +21,4 @@ const HomeIcon = () => {
     )
 }
 
-export default HomeIcon
+export default memo(HomeIcon)
