@@ -6,6 +6,7 @@ const HomePage = lazy(() => import('@pages/HomePage'))
 const FavoritesPage = lazy(() => import('@pages/FavoritesPage'))
 const SinglePicturePage = lazy(() => import('@pages/SinglePicturePage'))
 const SearchPage = lazy(() => import('@pages/SearchPage'))
+const NotFoundPage = lazy(() => import('@pages/notFoundPage/index'))
 
 export const ROUTES: RouteType[] = [
     {
@@ -27,5 +28,16 @@ export const ROUTES: RouteType[] = [
     {
         path: paths.SEARCH_PAGE_WITH_ENDPOINT,
         component: SearchPage,
+    },
+]
+
+export const NOT_FOUND_ROUTES: RouteType[] = [
+    {
+        path: paths.NOT_FOUND_PAGE,
+        component: NotFoundPage,
+    },
+    {
+        path: paths.OTHERS_PAGES,
+        component: NotFoundPage,
     },
 ]
