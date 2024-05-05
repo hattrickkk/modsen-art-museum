@@ -49,6 +49,7 @@ module.exports = {
             '@store': path.resolve(__dirname, 'src/store'),
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@pages': path.resolve(__dirname, 'src/pages'),
+            '@contexts': path.resolve(__dirname, 'src/contexts'),
         },
     },
 }

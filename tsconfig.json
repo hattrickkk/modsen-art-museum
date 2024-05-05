@@ -11,7 +11,8 @@
             "@customTypes/*": ["customTypes/*"],
             "@store/*": ["store/*"],
             "@assets/*": ["assets/*"],
-            "@pages/*": ["pages/*"]
+            "@pages/*": ["pages/*"],
+            "@contexts/*": ["contexts/*"]
         },
         "jsx": "react",
         "alwaysStrict": true,
