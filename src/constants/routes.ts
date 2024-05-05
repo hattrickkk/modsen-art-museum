@@ -1,9 +1,11 @@
+import { lazy } from 'react'
 import { RouteType } from '@customTypes/routes'
-import HomePage from '@pages/HomePage'
-import FavoritesPage from '@pages/FavoritesPage'
-import SinglePicturePage from '@pages/SinglePicturePage'
-import SearchPage from '@pages/SearchPage'
 import * as paths from '@constants/paths'
+
+const HomePage = lazy(() => import('@pages/HomePage'))
+const FavoritesPage = lazy(() => import('@pages/FavoritesPage'))
+const SinglePicturePage = lazy(() => import('@pages/SinglePicturePage'))
+const SearchPage = lazy(() => import('@pages/SearchPage'))
 
 export const ROUTES: RouteType[] = [
     {
