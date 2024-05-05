@@ -1,13 +1,13 @@
-import { PicType, ResponseType } from '@customTypes/picture'
+import { SearchPicType, SearchResponseType } from '@customTypes/search'
 
 export type SearchStateType = {
-    list: PicType[]
+    list: SearchPicType[]
     totalPages: number
     searchText: string
 }
 
 export type SearchActionPayloadType = {
-    response: ResponseType
+    response: SearchResponseType
     searchText: string
 }
 
