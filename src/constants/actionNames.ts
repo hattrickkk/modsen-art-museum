@@ -1,0 +1,4 @@
+export const SET_AS_FAVORITE: string = 'SET_AS_FAVORITE'
+export const REMOVE_FROM_FAVORITE: string = 'REMOVE_FROM_FAVORITE'
+export const REMOVE_ALL_FROM_FAVORITE: string = 'REMOVE_ALL_FROM_FAVORITE'
+export const SET_SEARCH_RESULTS: string = 'SET_SEARCH_RESULTS'
