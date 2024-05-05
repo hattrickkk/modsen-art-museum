@@ -1,20 +1,18 @@
 import AppRoutes from '@components/appRoutes'
-import { AppDispatch, AppState } from '@store/index'
-import { hideSearchPreviewAction } from '@store/searchPreview/actions'
 import { GlobalStyles } from '@styles/global'
 import { NullStyles } from '@styles/nullStyles'
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { BurgerMenuContext } from '@contexts/burgerMenuContext'
+import React, { useContext } from 'react'
+import { SearchPreviewContext } from '@contexts/searchPreviewContext'
 
 export const App = () => {
-    const isBurgerMenuOpen = useSelector((state: AppState) => state.burgerMenu.isOpen)
-    const isSearchPreviewOpen = useSelector((state: AppState) => state.searchPreview.isOpen)
-    const dispath = useDispatch<AppDispatch>()
+    const { isOpen: isBurgerMenuOpen } = useContext(BurgerMenuContext)
+    const { isOpen: isSearchPreviewOpen, close: hideSearchPreview } = useContext(SearchPreviewContext)
 
     const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
         if (isSearchPreviewOpen) {
             if (!(e.target as HTMLElement).closest('.preview') && !(e.target as HTMLElement).closest('.search-input')) {
-                dispath(hideSearchPreviewAction())
+                hideSearchPreview()
             }
         }
     }

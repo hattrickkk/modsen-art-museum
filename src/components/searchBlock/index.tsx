@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect } from 'react'
+import React, { ChangeEvent, useContext, useEffect } from 'react'
 import { StyledContainer } from '@styles/styles'
 import {
     StyledFormWrapper,
@@ -11,7 +11,6 @@ import {
 } from './styled'
 import SmallCard from '@components/smallCard'
 import { AppState, AppDispatch } from '@store/index'
-import { showSearchPreciewAction, hideSearchPreviewAction } from '@store/searchPreview/actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import SearchIcon from '@ui/searchIcon/SearchIcon'
@@ -20,15 +19,20 @@ import { Formik, Field, Form } from 'formik'
 import { loadSearchResults } from '@store/search/actions'
 import { debounce } from '@utils/debounce'
 import * as paths from '@constants/paths'
+import { SearchPreviewContext } from '@contexts/searchPreviewContext'
 
 const SearchBlock = () => {
     const search = useSelector((state: AppState) => state.search.list)
-    const isSearchPreviewOpen = useSelector((state: AppState) => state.searchPreview.isOpen)
+    const {
+        isOpen: isSearchPreviewOpen,
+        close: hideSearchPreview,
+        open: showSearchPreview,
+    } = useContext(SearchPreviewContext)
     const dispath = useDispatch<AppDispatch>()
     const navigate = useNavigate()
 
     useEffect(() => {
-        dispath(search.length ? showSearchPreciewAction() : hideSearchPreviewAction())
+        search.length ? showSearchPreview() : hideSearchPreview()
     }, [search])
 
     const sendSearchQuery = (search: string) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     StyledHeader,
     StyledHeaderBurger,
@@ -11,22 +11,21 @@ import { StyledContainer } from '@styles/styles'
 import { Flex } from '@styles/flexStyles'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '@assets/logo-light.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, AppState } from '@store/index'
-import { closeBurgerMenuAction, openBurgerMenuAction } from '@store/burgerMenu/actions'
+import {useSelector } from 'react-redux'
+import { AppState } from '@store/index'
 import HomeIcon from '@ui/homeIcon/HomeIcon'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
 import SaveIconNotEmpty from '@ui/saveIcon/SaveIconNotEmpty'
 import * as paths from '@constants/paths'
+import { BurgerMenuContext } from '@contexts/burgerMenuContext'
 
 const Header = () => {
-    const isOpen = useSelector((state: AppState) => state.burgerMenu.isOpen)
-    const dispath = useDispatch<AppDispatch>()
+    const { isOpen: isBurgerMenuOpen, open: openMenu, close: closeMenu } = useContext(BurgerMenuContext)
     const location = useLocation().pathname
     const hasFavs = !!useSelector((state: AppState) => state.favs.list.length)
 
     const burgerMenuToogle = () => {
-        dispath(isOpen ? closeBurgerMenuAction() : openBurgerMenuAction())
+        isBurgerMenuOpen ? closeMenu() : openMenu()
     }
 
     return (
@@ -35,7 +34,7 @@ const Header = () => {
                 <Flex>
                     <StyledHeaderLogo
                         onClick={() => {
-                            isOpen && dispath(closeBurgerMenuAction())
+                            isBurgerMenuOpen && closeMenu()
                         }}
                     >
                         <Link to={paths.HOME_PAGE}>
@@ -43,16 +42,16 @@ const Header = () => {
                         </Link>
                     </StyledHeaderLogo>
                     <StyledHeaderNav>
-                        <StyledHeaderMenu $open={isOpen}>
+                        <StyledHeaderMenu $open={isBurgerMenuOpen}>
                             {location !== paths.HOME_PAGE && (
-                                <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
+                                <StyledHeaderMenuItem onClick={closeMenu}>
                                     <Link to={paths.HOME_PAGE}>
                                         <HomeIcon />
                                         <span>Home</span>
                                     </Link>
                                 </StyledHeaderMenuItem>
                             )}
-                            <StyledHeaderMenuItem onClick={() => dispath(closeBurgerMenuAction())}>
+                            <StyledHeaderMenuItem onClick={closeMenu}>
                                 <Link to={paths.FAVORITES_PAGE}>
                                     {hasFavs ? <SaveIconNotEmpty /> : <SaveIcon />}
                                     <span>Your favorites</span>
@@ -60,7 +59,7 @@ const Header = () => {
                             </StyledHeaderMenuItem>
                         </StyledHeaderMenu>
 
-                        <StyledHeaderBurger $open={isOpen} onClick={burgerMenuToogle}>
+                        <StyledHeaderBurger $open={isBurgerMenuOpen} onClick={burgerMenuToogle}>
                             <span></span>
                         </StyledHeaderBurger>
                     </StyledHeaderNav>
