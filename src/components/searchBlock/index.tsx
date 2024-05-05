@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useContext, useEffect, useRef } from 'react'
+import React, { ChangeEvent, memo, useCallback, useContext, useEffect, useMemo, useRef } from 'react'
 import { StyledContainer } from '@styles/styles'
 import {
     StyledFormWrapper,
@@ -44,10 +44,11 @@ const SearchBlock = () => {
         changeSearchPreviewVisibility()
     }, [search])
 
-    const sendSearchQuery = (search: string) => {
+    const sendSearchQuery = useCallback((search: string) => {
         dispath(loadSearchResults(search, 1))
-    }
-    const debouncedSendQuery = debounce(sendSearchQuery, 500)
+    }, [])
+
+    const debouncedSendQuery = useMemo(() => debounce(sendSearchQuery, 500), [sendSearchQuery])
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>, hasErrors: boolean, value: string) => {
         if (e.target.value.trim() === '') {
@@ -111,4 +112,4 @@ const SearchBlock = () => {
     )
 }
 
-export default SearchBlock
+export default memo(SearchBlock)
