@@ -1,28 +1,23 @@
 import { PicType } from '@customTypes/picture'
 import { FavPicsActionType } from './types'
-
-export const FavPicsActionNames = {
-    SET_AS_FAVORITE: 'SET_AS_FAVORITE',
-    REMOVE_FROM_FOVORITE: 'REMOVE_FROM_FOVORITE',
-    REMOVE_ALL: 'REMOVE_ALL',
-}
+import { REMOVE_ALL_FROM_FAVORITE, REMOVE_FROM_FAVORITE, SET_AS_FAVORITE } from '@constants/actionNames'
 
 export const setAsFavoriteAction = (item: PicType): FavPicsActionType => {
     return {
-        type: FavPicsActionNames.SET_AS_FAVORITE,
+        type: SET_AS_FAVORITE,
         payload: item,
     }
 }
 
 export const removeFromFavoritesAction = (id: number): FavPicsActionType => {
     return {
-        type: FavPicsActionNames.REMOVE_FROM_FOVORITE,
+        type: REMOVE_FROM_FAVORITE,
         payload: id,
     }
 }
 
 export const removeAllFromFavorites = (): FavPicsActionType => {
     return {
-        type: FavPicsActionNames.REMOVE_ALL,
+        type: REMOVE_ALL_FROM_FAVORITE,
     }
 }

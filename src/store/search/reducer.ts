@@ -1,3 +1,4 @@
+import { SET_SEARCH_RESULTS } from '@constants/actionNames'
 import { SearchActionType, SearchStateType } from './types'
 
 const initValue: SearchStateType = {
@@ -8,7 +9,7 @@ const initValue: SearchStateType = {
 
 export const searchReducer = (state: SearchStateType = initValue, action: SearchActionType): SearchStateType => {
     switch (action.type) {
-        case 'SET_SEARCH_RESULTS':
+        case SET_SEARCH_RESULTS:
             return {
                 ...state,
                 list: action.payload.response.data.map(el => ({
