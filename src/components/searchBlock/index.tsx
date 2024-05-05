@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect } from 'react'
+import React, { ChangeEvent, useCallback, useContext, useEffect, useRef } from 'react'
 import { StyledContainer } from '@styles/styles'
 import {
     StyledFormWrapper,
@@ -31,8 +31,17 @@ const SearchBlock = () => {
     const dispath = useDispatch<AppDispatch>()
     const navigate = useNavigate()
 
+    const inputRef = useRef<HTMLInputElement>(null)
+    const changeSearchPreviewVisibility = useCallback(() => {
+        if (inputRef.current) {
+            if (inputRef.current.value !== '') {
+                search.length ? showSearchPreview() : hideSearchPreview()
+            }
+        }
+    }, [inputRef, search])
+
     useEffect(() => {
-        search.length ? showSearchPreview() : hideSearchPreview()
+        changeSearchPreviewVisibility()
     }, [search])
 
     const sendSearchQuery = (search: string) => {
@@ -67,6 +76,7 @@ const SearchBlock = () => {
                                         <Field name='search'>
                                             {() => (
                                                 <StyledSearchInput
+                                                    ref={inputRef}
                                                     className='search-input'
                                                     type='text'
                                                     name='search'
@@ -75,6 +85,7 @@ const SearchBlock = () => {
                                                         handleChange(event)
                                                         onChangeHandler(event, !!errors.search, values.search)
                                                     }}
+                                                    onClick={changeSearchPreviewVisibility}
                                                 />
                                             )}
                                         </Field>
