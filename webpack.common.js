@@ -5,7 +5,8 @@ module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
-        filename: '[name].[hash].js',
+        chunkFilename: '[name].bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         publicPath: '/',
@@ -50,6 +51,12 @@ module.exports = {
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@contexts': path.resolve(__dirname, 'src/contexts'),
+        },
+    },
+
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
         },
     },
 }
