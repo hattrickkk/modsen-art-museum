@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import {
     StyledHeader,
     StyledHeaderBurger,
@@ -24,9 +24,9 @@ const Header = () => {
     const location = useLocation().pathname
     const hasFavs = !!useSelector((state: AppState) => state.favs.list.length)
 
-    const burgerMenuToogle = () => {
+    const burgerMenuToogle = useCallback(() => {
         isBurgerMenuOpen ? closeMenu() : openMenu()
-    }
+    }, [isBurgerMenuOpen])
 
     return (
         <StyledHeader>
