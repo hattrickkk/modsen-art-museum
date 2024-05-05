@@ -1,14 +1,10 @@
 import { ContextType } from '@customTypes/context'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export const usecontextValues = (): ContextType => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const open = () => {
-        setIsOpen(true)
-    }
-    const close = () => {
-        setIsOpen(false)
-    }
+    const open = useCallback(() => setIsOpen(true), [])
+    const close = useCallback(() => setIsOpen(false), [])
 
     return {
         isOpen,
