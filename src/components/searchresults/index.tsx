@@ -1,7 +1,7 @@
 import CardsContainer from '@components/cardsContainer'
 import { AppDispatch, AppState } from '@store/index'
 import { StyledContainer } from '@styles/styles'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyledSearchResultsWrapper } from './styled'
 import { useParams } from 'react-router-dom'
@@ -17,11 +17,7 @@ const SearchResults = () => {
     const searchText = useSelector((state: AppState) => state.search.searchText)
 
     const { searchPageNumber } = useParams()
-    const [currentPage, setCurrentPage] = useState<number>(searchPageNumber ? +searchPageNumber : 1)
-
-    useEffect(() => {
-        setCurrentPage(searchPageNumber ? +searchPageNumber : 1)
-    }, [searchPageNumber])
+    const currentPage: number = useMemo(() => (searchPageNumber ? +searchPageNumber : 1), [searchPageNumber])
 
     useEffect(() => {
         dispath(loadSearchResults(searchText, currentPage))
