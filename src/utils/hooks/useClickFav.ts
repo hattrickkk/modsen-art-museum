@@ -2,7 +2,7 @@ import { PicType } from '@customTypes/picture'
 import { removeFromFavoritesAction, setAsFavoriteAction } from '@store/favorites/actions'
 import { AppDispatch, AppState } from '@store/index'
 import { isIdInFavorites } from '@utils/isIdInFavorites'
-import { useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 type UseClickFavsReturnType = {
@@ -15,9 +15,9 @@ export const useClickFavs = (item: PicType, isSinglePic: boolean = false): UseCl
     const favs: PicType[] = useSelector((state: AppState) => state.favs.list)
     const isfav = isSinglePic ? isIdInFavorites(item.id, favs) : useMemo(() => isIdInFavorites(item.id, favs), [favs])
 
-    const clickHandker = useCallback(() => {
+    const clickHandker = () => {
         isfav ? dispath(removeFromFavoritesAction(item.id)) : dispath(setAsFavoriteAction(item))
-    }, [isfav])
+    }
 
     return {
         clickHandker,
