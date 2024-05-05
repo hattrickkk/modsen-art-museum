@@ -13,7 +13,7 @@ import {
 } from './styled'
 import defaultImage from '@assets/default.svg'
 import SaveButton from '@ui/saveButton/SaveButton'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getMappedObject } from '@utils/getMapedObj'
 import { MAX_LENGTH_FOR_EXHIBITION_HISTORY_FIELD } from '@constants/magicNumbers'
 import { getPicById } from '@utils/api/getPicById'
@@ -21,6 +21,8 @@ import { SinglePicType } from '@customTypes/singlePicture'
 import { getSinglePicItem } from '@utils/getSinglePicItem'
 import { useImage } from '@utils/hooks/useImage'
 import { useClickFavs } from '@utils/hooks/useClickFav'
+import Loader from '@ui/loader/Loader'
+import { NOT_FOUND_PAGE } from '@constants/paths'
 
 const initValue: SinglePicType = {
     author: '',
@@ -42,11 +44,16 @@ const SinglePicture = () => {
     const imageURL = useImage(singlePic.image as string, singlePic)
     const { isfav, clickHandker } = useClickFavs(getMappedObject(singlePic), true)
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         getPicById(+(picId as string))
             .then(res => getSinglePicItem(res))
             .then(res => setSinglePic(res))
+            .catch(() => navigate(NOT_FOUND_PAGE))
     }, [picId])
+
+    if (singlePic === initValue) return <Loader />
 
     return (
         <StyledSinglePicture>
