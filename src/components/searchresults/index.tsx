@@ -9,6 +9,9 @@ import { loadSearchResults } from '@store/search/actions'
 import Pagination from '@components/pagination'
 import * as paths from '@constants/paths'
 import { COUNT_OF_AVAILABLE_SEARCH_RESULTS_PAGES } from '@constants/magicNumbers'
+import SortPanel from '@components/sortPanel'
+import { SortParamsType } from '@customTypes/sort'
+import { INIT_SORT_PARAMS_VALUE } from '@constants/sort'
 
 const SearchResults = () => {
     const dispath = useDispatch<AppDispatch>()
@@ -19,13 +22,15 @@ const SearchResults = () => {
     const { searchPageNumber } = useParams()
     const currentPage: number = useMemo(() => (searchPageNumber ? +searchPageNumber : 1), [searchPageNumber])
 
+    const [sortParams, setSortParams] = useState<SortParamsType>(INIT_SORT_PARAMS_VALUE)
     useEffect(() => {
-        dispath(loadSearchResults(searchText, currentPage))
-    }, [currentPage])
+        dispath(loadSearchResults(searchText, currentPage, sortParams))
+    }, [currentPage, sortParams])
 
     return (
         <StyledSearchResultsWrapper>
             <StyledContainer>
+                <SortPanel setSortParams={setSortParams} sortParams={sortParams} />
                 <CardsContainer big={false} list={searchResults} />
                 <Pagination
                     currentPage={currentPage}
