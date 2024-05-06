@@ -98,14 +98,16 @@ const SearchBlock = () => {
                             </StyledFormWrapper>
                         )}
                     </Formik>
-                    <StyledPreviewWrapper className='preview' $open={isSearchPreviewOpen}>
-                        {search.map(el => (
-                            <SmallCard key={el.id} item={el} />
-                        ))}
-                        <StyledPreviewViewAll onClick={() => navigate(`${paths.SEARCH_PAGE}1`)}>
-                            View all...
-                        </StyledPreviewViewAll>
-                    </StyledPreviewWrapper>
+                    {search.length !== 0 && (
+                        <StyledPreviewWrapper className='preview' $open={isSearchPreviewOpen}>
+                            {search.map(el => (
+                                <SmallCard key={el.id} item={el} />
+                            ))}
+                            <StyledPreviewViewAll onClick={() => navigate(`${paths.SEARCH_PAGE}1`)}>
+                                View all...
+                            </StyledPreviewViewAll>
+                        </StyledPreviewWrapper>
+                    )}
                 </StyledSearchBlock>
             </StyledContainer>
         </StyledSearchBlockWrapper>
