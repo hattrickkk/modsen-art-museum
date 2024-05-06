@@ -11,7 +11,7 @@ import { StyledContainer } from '@styles/styles'
 import { Flex } from '@styles/flexStyles'
 import { Link, useLocation } from 'react-router-dom'
 import logo from '@assets/logo-light.svg'
-import {useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { AppState } from '@store/index'
 import HomeIcon from '@ui/homeIcon/HomeIcon'
 import SaveIcon from '@ui/saveIcon/SaveIcon'
@@ -43,7 +43,7 @@ const Header = () => {
                     </StyledHeaderLogo>
                     <StyledHeaderNav>
                         <StyledHeaderMenu $open={isBurgerMenuOpen}>
-                            {location !== paths.HOME_PAGE && (
+                            {(location !== paths.HOME_PAGE && /^\/[^/]+$/g.test(location) === false) && (
                                 <StyledHeaderMenuItem onClick={closeMenu}>
                                     <Link to={paths.HOME_PAGE}>
                                         <HomeIcon />
