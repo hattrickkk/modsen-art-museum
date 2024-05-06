@@ -8,6 +8,7 @@ import {
     StyledPaginationPagesContainer,
 } from './styled'
 import PaginationArrow from '@ui/paginationArrow'
+import { PAGINATION_DELIMITER } from '@constants/dataConstants'
 
 type PropsType = {
     currentPage: number
@@ -31,7 +32,7 @@ const Pagination = ({ currentPage, pagesCount, path }: PropsType) => {
             <StyledPaginationPagesContainer>
                 {pages.map((el, i) => (
                     <StyledPaginationItem key={i} $active={!!(currentPage === el)}>
-                        {el === '...' ? <span>{'...'}</span> : <NavLink to={`${path}${el}`}>{el}</NavLink>}
+                        {el === PAGINATION_DELIMITER ? <span>{PAGINATION_DELIMITER}</span> : <NavLink to={`${path}${el}`}>{el}</NavLink>}
                     </StyledPaginationItem>
                 ))}
             </StyledPaginationPagesContainer>
