@@ -16,6 +16,7 @@ type PropsType = {
 }
 
 const Pagination = ({ currentPage, pagesCount, path }: PropsType) => {
+    if (pagesCount === 1) return null
     const navigate = useNavigate()
     const pages = useMemo(() => getPages(currentPage, pagesCount), [pagesCount, currentPage])
 
