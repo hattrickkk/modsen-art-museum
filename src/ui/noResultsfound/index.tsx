@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledNoResultsFound } from './styled'
 import noResultsFound from '@assets/no-results-found.png'
 
@@ -10,4 +10,4 @@ const NoResultsFound = () => {
     )
 }
 
-export default NoResultsFound
+export default memo(NoResultsFound)

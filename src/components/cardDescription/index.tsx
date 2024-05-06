@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { StyledAvailabilityInfo, StyledDescription, StyledParagraph, StyledTextContainer, StyledTitle } from './styled'
 import { Flex } from '@styles/flexStyles'
 import { PicType } from '@customTypes/picture'
@@ -27,4 +27,4 @@ const CardDescription = ({ small, item }: PropsType) => {
     )
 }
 
-export default CardDescription
+export default memo(CardDescription)
