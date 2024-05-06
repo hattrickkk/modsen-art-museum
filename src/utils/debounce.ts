@@ -1,10 +1,7 @@
-export const debounce = <T extends (...args: any[]) => void>(
-    fn: T,
-    ms: number = 500
-): ((...args: Parameters<T>) => void) => {
+export const debounce = <T extends (search: string) => void>(fn: T, ms: number = 500) => {
     let timeout: NodeJS.Timeout
 
-    return function (this: any, ...args: Parameters<T>) {
+    return function (this: unknown, ...args: Parameters<T>) {
         const fnCall = () => {
             fn.apply(this, args)
         }
