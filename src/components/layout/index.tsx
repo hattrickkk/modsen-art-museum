@@ -4,7 +4,7 @@ import { StyledMain, StyledPageWrapper } from './styled'
 import Footer from '@components/footer'
 import Header from '@components/header'
 import ErrorBoundary from '@components/errorBoundary'
-import Loader from '@ui/loader/Loader'
+import Loader from '@ui/loader'
 
 const Layout = () => {
     return (

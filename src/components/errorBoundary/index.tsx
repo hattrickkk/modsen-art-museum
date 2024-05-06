@@ -1,5 +1,5 @@
 import { StyledPage, StyledContainer } from '@styles/styles'
-import Button from '@ui/button/Button'
+import Button from '@ui/button'
 import React, { Component, ReactNode } from 'react'
 import { StyledErrorFalback, StyledErrorFalbackText, StyledErrorFalbackTitle } from './styled'
 import { Link } from 'react-router-dom'

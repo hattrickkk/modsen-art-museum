@@ -1,6 +1,6 @@
 import React from 'react'
-import SaveIcon from '@ui/saveIcon/SaveIcon'
-import Title from '@ui/title/Title'
+import SaveIcon from '@ui/saveIcon'
+import Title from '@ui/title'
 import { StyledContainer, StyledEmptyPageText, StyledPage } from '@styles/styles'
 import FavoritesSection from '@components/favoritesSection'
 import { AppState } from '@store/index'
@@ -25,7 +25,8 @@ const FavoritesPage = () => {
             ) : (
                 <StyledContainer>
                     <StyledEmptyPageText>
-                        You haven't added anything to favorites yet. Do this on the <Link to={paths.HOME_PAGE}>home page</Link>.
+                        You haven't added anything to favorites yet. Do this on the{' '}
+                        <Link to={paths.HOME_PAGE}>home page</Link>.
                     </StyledEmptyPageText>
                 </StyledContainer>
             )}

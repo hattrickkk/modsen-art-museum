@@ -3,7 +3,7 @@ import Layout from '@components/layout'
 import { Route, Routes } from 'react-router-dom'
 import * as paths from '@constants/paths'
 import { NOT_FOUND_ROUTES, ROUTES } from '@constants/routes'
-import Loader from '@ui/loader/Loader'
+import Loader from '@ui/loader'
 
 const AppRoutes = () => {
     return (

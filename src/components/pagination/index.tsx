@@ -7,7 +7,7 @@ import {
     StyledPaginationItem,
     StyledPaginationPagesContainer,
 } from './styled'
-import PaginationArrow from '@ui/paginationArrow/PaginationArrow'
+import PaginationArrow from '@ui/paginationArrow'
 
 type PropsType = {
     currentPage: number

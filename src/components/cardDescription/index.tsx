@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { StyledAvailabilityInfo, StyledDescription, StyledParagraph, StyledTextContainer, StyledTitle } from './styled'
 import { Flex } from '@styles/flexStyles'
 import { PicType } from '@customTypes/picture'
-import SaveButton from '@ui/saveButton/SaveButton'
+import SaveButton from '@ui/saveButton'
 import { useClickFavs } from '@utils/hooks/useClickFav'
 
 type PropsType = {

@@ -12,7 +12,7 @@ import {
     StyledSinglePicture,
 } from './styled'
 import defaultImage from '@assets/default.svg'
-import SaveButton from '@ui/saveButton/SaveButton'
+import SaveButton from '@ui/saveButton'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getMappedObject } from '@utils/getMapedObj'
 import { MAX_LENGTH_FOR_EXHIBITION_HISTORY_FIELD } from '@constants/magicNumbers'
@@ -21,7 +21,7 @@ import { SinglePicType } from '@customTypes/singlePicture'
 import { getSinglePicItem } from '@utils/getSinglePicItem'
 import { useImage } from '@utils/hooks/useImage'
 import { useClickFavs } from '@utils/hooks/useClickFav'
-import Loader from '@ui/loader/Loader'
+import Loader from '@ui/loader'
 import { NOT_FOUND_PAGE } from '@constants/paths'
 
 const initValue: SinglePicType = {

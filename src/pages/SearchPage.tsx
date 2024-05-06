@@ -1,7 +1,7 @@
 import SearchResults from '@components/searchresults'
 import { AppState } from '@store/index'
 import { StyledContainer, StyledEmptyPageText, StyledPage } from '@styles/styles'
-import Title from '@ui/title/Title'
+import Title from '@ui/title'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'

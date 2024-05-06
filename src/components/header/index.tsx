@@ -13,9 +13,9 @@ import { Link, useLocation } from 'react-router-dom'
 import logo from '@assets/logo-light.svg'
 import { useSelector } from 'react-redux'
 import { AppState } from '@store/index'
-import HomeIcon from '@ui/homeIcon/HomeIcon'
-import SaveIcon from '@ui/saveIcon/SaveIcon'
-import SaveIconNotEmpty from '@ui/saveIcon/SaveIconNotEmpty'
+import HomeIcon from '@ui/homeIcon'
+import SaveIcon from '@ui/saveIcon'
+import SaveIconNotEmpty from '@ui/saveIconNotEmpty'
 import * as paths from '@constants/paths'
 import { BurgerMenuContext } from '@contexts/burgerMenuContext'
 
@@ -43,7 +43,7 @@ const Header = () => {
                     </StyledHeaderLogo>
                     <StyledHeaderNav>
                         <StyledHeaderMenu $open={isBurgerMenuOpen}>
-                            {(location !== paths.HOME_PAGE && /^\/[^/]+$/g.test(location) === false) && (
+                            {location !== paths.HOME_PAGE && /^\/[^/]+$/g.test(location) === false && (
                                 <StyledHeaderMenuItem onClick={closeMenu}>
                                     <Link to={paths.HOME_PAGE}>
                                         <HomeIcon />

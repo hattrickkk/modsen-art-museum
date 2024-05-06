@@ -1,7 +1,7 @@
 import OtherWorksSection from '@components/otherWorksSection'
-import {StyledPage } from '@styles/styles'
+import { StyledPage } from '@styles/styles'
 import React from 'react'
-import Title from '@ui/title/Title'
+import Title from '@ui/title'
 import GallerySection from '@components/gallerySection'
 import SearchBlock from '@components/searchBlock'
 
