@@ -59,7 +59,7 @@ const Header = () => {
                             </StyledHeaderMenuItem>
                         </StyledHeaderMenu>
 
-                        <StyledHeaderBurger $open={isBurgerMenuOpen} onClick={burgerMenuToogle}>
+                        <StyledHeaderBurger $open={isBurgerMenuOpen} onClick={burgerMenuToogle} data-testid='burger'>
                             <span></span>
                         </StyledHeaderBurger>
                     </StyledHeaderNav>
