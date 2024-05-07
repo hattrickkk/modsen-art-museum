@@ -11,7 +11,7 @@ type ProppsType = {
 
 const RadioItem = ({ name, value, checked, id, onClick }: ProppsType) => {
     return (
-        <StyledRadioItem onClick={onClick} $checked={checked}>
+        <StyledRadioItem onClick={onClick} $checked={checked} data-testid='radioItem'>
             <input type='radio' name={name} id={id} defaultChecked={checked} />
             <label htmlFor={id}>{value}</label>
         </StyledRadioItem>
