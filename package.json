@@ -24,6 +24,7 @@
         "@types/react-dom": "^18.2.6",
         "@types/testing-library__jest-dom": "^6.0.0",
         "@types/webpack": "^5.28.1",
+        "cross-fetch": "^4.0.0",
         "eslint": "^9.1.1",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",

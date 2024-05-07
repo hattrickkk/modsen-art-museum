@@ -15,5 +15,5 @@ module.exports = {
         '^@contexts(.*)$': '<rootDir>/src/contexts$1',
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-    setupFilesAfterEnv: ['@testing-library/jest-dom/jest-globals'],
+    setupFilesAfterEnv: ['@testing-library/jest-dom/jest-globals', 'cross-fetch/polyfill'],
 }
